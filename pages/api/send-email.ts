@@ -6,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, phone, message } = JSON.parse(req.body);
 
   sgMail.setApiKey(
-    "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"
+    process.env.SENDGRID_KEY
   );
 
   const msg = {
