@@ -8,7 +8,7 @@ import {
 
 const HeroBannerComponent = () => {
   return (
-    <HeroWrapper className="hero container" id="home">
+    <HeroWrapper className="container" id="home">
       <div className="container">
         <HeroContent className="hero__content">
           <HeroContentTitle className="hero__content__title">

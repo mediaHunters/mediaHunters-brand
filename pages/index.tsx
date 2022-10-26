@@ -3,12 +3,12 @@ import React from "react";
 
 import dynamic from "next/dynamic";
 import { LinkDropdown, LinkText } from "../interfaces/link.interface";
-const HeaderComponent = dynamic(
-  () => import("../components/header/header.component")
-);
-const HeroBannerComponent = dynamic(
-  () => import("../components/hero-banner/hero-banner.component")
-);
+
+import HeaderComponent from "../components/header/header.component";
+import HeroBannerComponent from "../components/hero-banner/hero-banner.component";
+import { ToastContainer } from "react-bootstrap";
+import Script from "next/script";
+
 const WhyWe = dynamic(() => import("../components/why-we/why-we.conponent"));
 const ServicesComponent = dynamic(
   () => import("../components/services/services.component")
@@ -76,6 +76,7 @@ const HomePage: NextPage = () => {
       <ServicesComponent />
       <ContactFormComponent />
       <FooterComponent />
+
     </div>
   );
 };

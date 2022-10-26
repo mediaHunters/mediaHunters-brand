@@ -1,5 +1,6 @@
+import Link from "next/link";
 import React from "react";
-import { ISeoPacket, ISeoTableData, SeoPackets } from "./seo-table.data";
+import { ISeoTableData, SeoPackets } from "./seo-table.data";
 import { PricingButton } from "./seo.style";
 
 interface ISeoTableComponent {
@@ -9,7 +10,6 @@ interface ISeoTableComponent {
 
 const SeoTableComponent = (props: ISeoTableComponent) => {
   const packet = SeoPackets[props.type];
-  console.log(packet)
   return (
     <div className="col-lg-4 mb-5 mb-lg-0">
       <div className="bg-white p-5 rounded-lg shadow">
@@ -80,11 +80,11 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
         </ul>
         <div className="mb-5"></div>
           <PricingButton className="btn btn-block p-2 shadow rounded-pill">
-          <a
+          <Link
           href="/#contact"
         >
           Skontaktuj się!
-        </a>
+        </Link>
           </PricingButton>
 
       </div>

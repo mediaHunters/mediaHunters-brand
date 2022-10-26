@@ -1,16 +1,18 @@
 import React from 'react'; 
 import { ServiceData, servicesData } from "./services.data";
+import Image from 'next/image';
 
 const ServicesComponent = () => {
   return (
     <section className="c-section" id="services">
       <div className="about-bottom">
         <figure className="about-bottom__banner">
-          <img
+          <Image
             src="/images/about-banner.png"
             alt="about banner"
-            className="about-banner"
             loading="lazy"
+            width="400px"
+            height="500px"
           />
         </figure>
 

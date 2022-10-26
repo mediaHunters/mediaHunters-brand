@@ -6,10 +6,11 @@ export const HeroWrapper = styled.section`
   padding: 130px 0 140px;
   z-index: 1;
   display: flex;
+  min-width: 300px;
 `;
 
 export const HeroContent = styled.div`
-  @emdia (max-width: 1024px) {
+  @media (max-width: 1024px) {
     text-align: center;
   }
 

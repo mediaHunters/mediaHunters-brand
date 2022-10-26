@@ -93,14 +93,14 @@ export class headerComponent extends React.Component<headerProps, headerState> {
     return (
       <MainHeaderWrapper scrollY={this.state.scrollY}>
         <Container className="container">
-          <a href="/" className="logo">
+          <Link href="/" className="logo">
             <Image
               alt="Company logo"
               src="/images/logo.png"
               width="125px"
               height="125px"
             />
-          </a>
+          </Link>
           <Navbar>
             <NavbarList activeMenu={this.state.activeMenu}>
               {(this.links as LinkText[]).map(

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FooterComponent from "../footer/footer.component";
 import { Footer } from "../footer/footer.style";
 import {
@@ -56,7 +57,7 @@ const PricingWebsitesComponent = () => {
               Od <WebsitesGridPrice>2000,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
-              <a href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</a>
+              <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
             </button>
           </div>
           <WebsitesPackageImageWrapper>
@@ -107,7 +108,7 @@ const PricingWebsitesComponent = () => {
               Od <WebsitesGridPrice>900,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
-              <a href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</a>
+              <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
             </button>
           </div>
         </WebsitesGrid>
@@ -139,7 +140,7 @@ const PricingWebsitesComponent = () => {
               Od <WebsitesGridPrice>2490,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
-              <a href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</a>
+              <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
             </button>
           </div>
           <WebsitesPackageImageWrapper>
@@ -155,7 +156,7 @@ const PricingWebsitesComponent = () => {
           </WebsitesPackageImageWrapper>
         </WebsitesGrid>
       </div>
-      <FooterComponent />
+      <Footer />
     </>
   );
 };

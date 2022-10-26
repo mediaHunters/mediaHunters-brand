@@ -43,9 +43,9 @@ class DropdownComponent extends React.Component<DropdownProps, State> {
           <span style={{ fontWeight: "600", cursor: "pointer" }}>
             {this.props.links.text}
           </span>
-          <NavbarLinkDropdownWrapper isActive={this.state.active}>
+          <NavbarLinkDropdownWrapper isActive={this.state.active} key={"drodown"}>
             {this.props.links.links.map((link: any) => (
-              <NavbarLink href={link.url}>{link.text}</NavbarLink>
+              <NavbarLink href={link.url} key={link.url}>{link.text}</NavbarLink>
             ))}
           </NavbarLinkDropdownWrapper>
         </NavbarItem>

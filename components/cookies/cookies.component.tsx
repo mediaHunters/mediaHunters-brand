@@ -192,7 +192,7 @@ const CookiesComponent = () => {
         wykorzystywane są w następujących celach: utrzymanie sesji użytkownika
         Serwisu (po zalogowaniu), dzięki której użytkownik nie musi na każdej
         podstronie Serwisu ponownie wpisywać loginu i hasła; realizacji celów
-        określonych powyżej w części "Istotne techniki marketingowe"; W ramach
+        określonych powyżej w części &quot;Istotne techniki marketingowe&quot;; W ramach
         Serwisu stosowane są dwa zasadnicze rodzaje plików cookies: „sesyjne”
         (session cookies) oraz „stałe” (persistent cookies). Cookies „sesyjne”
         są plikami tymczasowymi, które przechowywane są w urządzeniu końcowym

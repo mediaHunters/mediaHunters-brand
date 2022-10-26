@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React from "react";
 import { IFaqQuestion } from "./faq.questions";
 import {
   FaqQuestionsContainer,
@@ -10,7 +10,7 @@ import {
   QuestionHeader,
   SearchIcon,
 } from "./faq.style";
-
+import Image from 'next/image';
 interface IFaqProps {
   questions: IFaqQuestion[];
   updateSearchedQuestions: (searchText: string) => void;
@@ -35,9 +35,7 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
   }
 
   componentDidUpdate(prevProps: IFaqProps) {
-    console.log(this.props.questions);
     if (prevProps.questions !== this.props.questions) {
-      console.log(this.props.questions);
       this.setState({
         questions: this.props.questions,
       });
@@ -54,7 +52,7 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
       <FaqQuestionsContainer className="container">
         <div>
           <FaqQuestionsContainerHeader>
-            <img src="/images/waving-hand.png" alt="waving hand" />
+            <Image src="/images/waving-hand.png" alt="waving hand" width="100%" height="100%"/>
             FAQ’S - Najczęściej zadawane pytania
           </FaqQuestionsContainerHeader>
 
@@ -72,9 +70,9 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
         </div>
 
         <FaqQuestionsWrapper>
-          {this.props.questions.map((question: IFaqQuestion) => {
+          {this.props.questions.map((question: IFaqQuestion, idx: number) => {
             return (
-              <QuestionCard>
+              <QuestionCard key={idx}>
                 <QuestionHeader>{question.question}</QuestionHeader>
                 <QuestionDescrption>{question.answer}</QuestionDescrption>
               </QuestionCard>
