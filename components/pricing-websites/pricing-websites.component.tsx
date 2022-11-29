@@ -63,8 +63,8 @@ const PricingWebsitesComponent = () => {
           <WebsitesPackageImageWrapper>
             <picture>
               <WebsitePackageImage
-                src="/images/multi.png"
-                alt=""
+                src="/images/Multipage.png"
+                alt="strony-Multipage-cennik"
                 width="400px"
                 height="400px"
                 loading="lazy"
@@ -79,8 +79,8 @@ const PricingWebsitesComponent = () => {
           <WebsitesPackageImageWrapper >
             <picture>
               <WebsitePackageImage
-                src="/images/single.png"
-                alt=""
+                src="/images/Onepage.png"
+                alt="tanie-strony-wizytówki"
                 width="400px"
                 height="400px"
                 loading="lazy"
@@ -146,8 +146,8 @@ const PricingWebsitesComponent = () => {
           <WebsitesPackageImageWrapper>
             <picture>
               <WebsitePackageImage
-                src="/images/extended.png"
-                alt=""
+                src="/images/Rozbudowane-strony.png"
+                alt="dedykowane-strony-www"
                 width="400px"
                 height="400px"
                 loading="lazy"

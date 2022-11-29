@@ -20,8 +20,8 @@ const FooterComponent = () => {
           <FooterBrand>
             <FooterLink href="/" style={{ marginBottom: "30px" }}>
               <Image
-                alt="Company logo"
-                src="/images/logo.png"
+                alt="tworzenie-i-projektowanie-stron"
+                src="/images/MediaHunters.png"
                 width="125px"
                 height="125px"
               />

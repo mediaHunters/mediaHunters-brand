@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { lighten } from "polished";
 
+
 export const MainHeaderWrapper = styled.header<{ scrollY: number }>`
   position: relative;
   z-index: ${(props) => props.theme.zIndex["z-index-10"]};
@@ -22,7 +23,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media(max-width: 1024px) {
+  @media (max-width: 1024px) {
     padding: 0 33px;
   }
 `;
@@ -35,38 +36,37 @@ export const Navbar = styled.div`
 `;
 
 export const NavbarList = styled.ul<{ activeMenu: boolean }>`
-    padding: 10px;
+  padding: 10px;
+  display: flex;
+  @media (min-width: 1024px) {
     display: flex;
-    @media (min-width: 1024px) {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0;
-        gap: 10px;
-        margin-right: 20px;
+    align-items: center;
+    margin-bottom: 0;
+    gap: 10px;
+    margin-right: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    right: 13%;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition: max-height 0.15s ease-out;
+    a {
+      color: ${(props) => props.theme.colors.white};
     }
-
-    @media (max-width: 1024px) {  
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        right: 13%;
-        top: 0;
-        left: 0;
-        right: 0;
-        max-height: 0;
-        overflow: hidden;
-        background-color: transparent;
-        transition: max-height 0.15s ease-out;
-        a {
-          color: ${(props) => props.theme.colors.white};
-
-        }
-        ${(props) => {
-          if (props.activeMenu) {
-            return `
+    ${(props) => {
+      if (props.activeMenu) {
+        return `
             max-height: 500px;
             transition: max-height 0.25s ease-in;
             background-color: ${props.theme.colors.bittersweet};
@@ -74,9 +74,9 @@ export const NavbarList = styled.ul<{ activeMenu: boolean }>`
               color: ${props.theme.colors.white};
             }
             `;
-          } 
-          }
-        }}
+      }
+    }}
+  }
 `;
 export const NavbarItem = styled.li`
   list-style-type: none;
@@ -98,11 +98,12 @@ export const NavbarLink = styled.a`
   }
 `;
 
-export const CrossBox = styled.div<{visible: boolean; windowWidth: number}>`
-  display: ${({visible, windowWidth}) => visible && windowWidth < 1024 ? 'block' : 'none'};
+export const CrossBox = styled.div<{ visible: boolean; windowWidth: number }>`
+  display: ${({ visible, windowWidth }) =>
+    visible && windowWidth < 1024 ? "block" : "none"};
   transition: 0.75s ease-in-out;
   position: absolute;
   top: 33px;
   right: 33px;
-  z-index: ${(props) => props.theme['z-index-100']}
-`
+  z-index: ${(props) => props.theme["z-index-100"]};
+`;

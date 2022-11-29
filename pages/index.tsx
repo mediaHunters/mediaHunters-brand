@@ -6,8 +6,7 @@ import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
 import HeaderComponent from "../components/header/header.component";
 import HeroBannerComponent from "../components/hero-banner/hero-banner.component";
-import { ToastContainer } from "react-bootstrap";
-import Script from "next/script";
+import Head from "next/head";
 
 const WhyWe = dynamic(() => import("../components/why-we/why-we.conponent"));
 const ServicesComponent = dynamic(
@@ -70,13 +69,23 @@ const HomePage: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>Media hunters</title>
+        <meta
+          name="title"
+          content="Strony internetowe Wrocław, projektowanie i tworzenie stron WWW"
+        />
+        <meta
+          name="description"
+          content="Media Hunters to specjaliści tworzenia i wdrażania stron internetowych we Wrocławiu i okolicach. Sprawdź nasz cennik usług WWW. Nieszablonowe, autorskie projekty oraz strony na abonament. "
+        />
+      </Head>
       <HeaderComponent links={links} />
       <HeroBannerComponent />
       <WhyWe />
       <ServicesComponent />
       <ContactFormComponent />
       <FooterComponent />
-
     </div>
   );
 };

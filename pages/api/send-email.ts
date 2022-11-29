@@ -1,13 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { verifyUser } from "../../utils/helpers";
 const sgMail = require("@sendgrid/mail");
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
+  const { name, email, phone, message, captcha } = JSON.parse(req.body);
 
-  const { name, email, phone, message } = JSON.parse(req.body);
-
-  sgMail.setApiKey(
-    process.env.SENDGRID_KEY
-  );
+  sgMail.setApiKey(process.env.SENDGRID_KEY);
 
   const msg = {
     from: "hello.mediahunters@gmail.com",
@@ -21,13 +19,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     ],
   };
 
-  await sgMail.send(msg);
-  res.json({
-    success: true,
-    msg: "valid user",
-  });
+  if (verifyUser(captcha, res)) {
+    await sgMail.send(msg);
+    res.json({
+      success: true,
+      msg: "valid user",
+    });
+  }
 };
 
-// SENDGRID_PRIVATE_KEY=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
-// RECAPTCHA_PRIVATE_KEY=6LdrYsYhAAAAALPExHun2SqVLQRLMw7_Y_3WjcKW
-// RECAPTCHA_API_URL=https://www.google.com/recaptcha/api/siteverify

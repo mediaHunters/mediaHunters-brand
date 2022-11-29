@@ -21,8 +21,10 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
         <div className="custom-separator my-4 mx-auto bg-primary-bittersweet"></div>
 
         <ul className="list-unstyled my-5 text-left">
-          <li key="Pozycjonowanie stron ( SEO lokalne )" className="h4">Pozycjonowanie stron ( SEO lokalne )</li>
-          {props.data.seoWebsites.map((elem: any, idx: number) => {
+          <li key="Pozycjonowanie stron ( SEO lokalne )" className="h4">
+            Pozycjonowanie stron ( SEO lokalne )
+          </li>
+          {props.data.seoWebsites.map((elem: any) => {
             if (elem[props.type]) {
               return (
                 <li className="mb-3" key={elem.text}>
@@ -40,7 +42,9 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
             }
           })}
           <div className="mb-5"></div>
-          <li key="Pozycjonowanie" className="h4">Pozycjonowanie</li>
+          <li key="Pozycjonowanie" className="h4">
+            Pozycjonowanie
+          </li>
           {props.data.seo.map((elem: any, idx: number) => {
             if (elem[props.type]) {
               return (
@@ -59,7 +63,9 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
             }
           })}
           <div className="mb-5"></div>
-          <li key="Administracja" className="h4">Administracja</li>
+          <li key="Administracja" className="h4">
+            Administracja
+          </li>
           {props.data.administration.map((elem: any, idx: number) => {
             if (elem[props.type]) {
               return (
@@ -79,14 +85,9 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
           })}
         </ul>
         <div className="mb-5"></div>
-          <PricingButton className="btn btn-block p-2 shadow rounded-pill">
-          <Link
-          href="/#contact"
-        >
-          Skontaktuj się!
-        </Link>
-          </PricingButton>
-
+        <PricingButton className="btn btn-block p-2 shadow rounded-pill">
+          <Link href="/#contact"><a>Skontaktuj się!</a></Link>
+        </PricingButton>
       </div>
     </div>
   );

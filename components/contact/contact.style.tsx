@@ -40,11 +40,10 @@ export const LeftSide = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 15px;
-  position: relative;
+  align-items: flex-start;
 
   @media (max-width: 820px) {
     flex-direction: row;
-    margin-top: 40px;
     margin-bottom: 20px;
     justify-content: center;
     flex-wrap: wrap;
@@ -54,6 +53,7 @@ export const LeftSide = styled.div`
     }
   }
 `;
+
 
 export const RightSide = styled.div`
   width: 75%;

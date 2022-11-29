@@ -43,16 +43,3 @@ export const HeroContentTitle = styled.h1`
 export const HeroContentText = styled.p`
   margin-bottom: 40px;
 `;
-
-export const ImageBlobWrapper = styled.img`
-  position: absolute;
-  width: 100%;
-  max-width: 900px;
-  z-index: -10000;
-  top: -120px;
-  right: -175px;
-  display: none;
-  @meida(min-widht: 1024px) {
-    display: block;
-  }
-`;

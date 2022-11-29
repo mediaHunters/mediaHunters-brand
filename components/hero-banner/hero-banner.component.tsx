@@ -3,7 +3,6 @@ import {
   HeroContent,
   HeroContentTitle,
   HeroWrapper,
-  ImageBlobWrapper,
 } from "./hero-banner.style";
 
 const HeroBannerComponent = () => {
@@ -30,12 +29,6 @@ const HeroBannerComponent = () => {
 
         <div className="hero__content__banner"></div>
       </div>
-        <ImageBlobWrapper
-          src="/images/blob.png"
-          alt="shape"
-          className="hero__shape-content"
-          loading="lazy"
-        />
     </HeroWrapper>
   );
 };
