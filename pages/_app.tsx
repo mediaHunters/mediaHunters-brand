@@ -15,7 +15,6 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { ToastContainer } from "react-toastify";
 
-
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
@@ -24,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Theme>
       <Head>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=UA-237114672-1"
@@ -45,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         location="bottom"
         buttonText="Ok"
         declineButtonText="Odrzuć"
-        cookieName="myAwesomeCookieName2"
+        cookieName="Cookies"
         style={{ background: "#d3cbfd", color: "#6d51f7", padding: "20px" }}
         declineButtonStyle={{
           border: "2px solid #6d51f7",

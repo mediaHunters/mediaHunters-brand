@@ -24,7 +24,7 @@ const initialState: IContactFormState = {
   message: "",
 };
 
-class ContactFormComponent extends React.Component<{}, IContactFormState> {
+class ContactFormComponent extends React.Component<any, IContactFormState> {
   private readonly recaptchaRef = React.createRef<ReCAPTCHA>();
 
   constructor(props: any) {

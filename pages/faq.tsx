@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { LinkText, LinkDropdown } from "../interfaces/link.interface";
-import { faqQuestions } from "../components/faq/faq.questions";
+import { faqQuestions, IFaqQuestion } from "../components/faq/faq.questions";
 
 const FaqComponent = dynamic(() => import("../components/faq/faq.component"));
 const FooterComponent = dynamic(
@@ -11,7 +11,11 @@ const HeaderComponent = dynamic(
   () => import("../components/header/header.component")
 );
 
-class Faq extends React.Component<any, any> {
+export interface IFaqState {
+  questions: IFaqQuestion[]
+}
+
+class Faq extends React.Component<any, IFaqState> {
   private readonly links: Array<LinkText | LinkDropdown> = [
     {
       text: "Home",
@@ -48,9 +52,11 @@ class Faq extends React.Component<any, any> {
   }
 
   updateSearchedQuestions(searchText: string): void {
-    const questions = faqQuestions.filter((o: any) =>
-      Object.keys(o).some((k: any) =>
-        o[k].toLowerCase().includes(searchText.toLowerCase())
+    const questions: IFaqQuestion[] = faqQuestions.filter((question: IFaqQuestion) =>
+      Object.keys(question).some((questionProperty: string) =>
+        {
+          return (question  as any)[questionProperty].toLowerCase().includes(searchText.toLowerCase())
+        }
       )
     );
     this.setState({ questions });

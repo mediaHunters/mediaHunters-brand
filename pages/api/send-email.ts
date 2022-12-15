@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { verifyUser } from "../../utils/helpers";
-const sgMail = require("@sendgrid/mail");
+import sgMail, { MailDataRequired } from "@sendgrid/mail";
 
-export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
+const SendEmail = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const { name, email, phone, message, captcha } = JSON.parse(req.body);
 
-  sgMail.setApiKey(process.env.SENDGRID_KEY);
+  sgMail.setApiKey(process.env.SENDGRID_KEY as string);
 
   const msg = {
     from: "hello.mediahunters@gmail.com",
@@ -20,7 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
   };
 
   if (verifyUser(captcha, res)) {
-    await sgMail.send(msg);
+    await sgMail.send(msg as MailDataRequired);
     res.json({
       success: true,
       msg: "valid user",
@@ -28,3 +28,4 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
   }
 };
 
+export default SendEmail

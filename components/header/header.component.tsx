@@ -66,7 +66,7 @@ export class headerComponent extends React.Component<headerProps, headerState> {
 
   updateDimensions() {
     if (typeof window !== "undefined") {
-      let documentElement = document.documentElement,
+      const documentElement = document.documentElement,
         body = document.getElementsByTagName("body")[0],
         width = window.innerWidth || documentElement.clientWidth || body.clientWidth;
       

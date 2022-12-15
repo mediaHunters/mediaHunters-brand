@@ -1,23 +1,25 @@
 {
   "name": "afp-brand",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "npx next dev",
     "build": "npx next build ",
     "start": "npx next start",
     "lint": "npx next lint",
-    "deploy": "npm run build && firebase login && firebase deploy"
+    "deploy": "npm run build && firebase login && firebase deploy",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.13.1",
     "@sendgrid/mail": "^7.7.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
     "axios": "^1.1.3",
     "bootstrap": "^5.2.2",
     "cross-env": "^7.0.3",
-    "glob": "^8.0.3",
-    "next": "^12.2.5",
+    "next": "^12.2.0",
     "nodemailer": "^6.8.0",
+    "npm": "^9.1.3",
     "nprogress": "^0.2.0",
     "polished": "^4.2.2",
     "react": "18.2.0",
@@ -37,8 +39,8 @@
     "@types/glob": "^8.0.0",
     "@types/node": "18.11.0",
     "@types/nprogress": "^0.2.0",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-gtm-module": "^2.0.1",
     "@types/styled-components": "^5.1.26",
@@ -46,6 +48,8 @@
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "^8.5.0",
+    "next-sitemap": "^3.1.32",
+    "node-gyp": "^9.3.0",
     "prettier": "^2.7.1",
     "typescript": "4.8.4"
   }
