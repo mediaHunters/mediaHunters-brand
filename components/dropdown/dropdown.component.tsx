@@ -40,7 +40,7 @@ class DropdownComponent extends React.Component<DropdownProps, State> {
           onMouseLeave={this.toggleClassOnLeave}
           onMouseEnter={this.toggleClassOnEnter}
         >
-          <span style={{ fontWeight: "600", cursor: "pointer" }}>
+          <span style={{ fontWeight: "600", cursor: "pointer", fontSize: "16px"}}>
             {this.props.links.text}
           </span>
           <NavbarLinkDropdownWrapper isActive={this.state.active} key={"drodown"}>

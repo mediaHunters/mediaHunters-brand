@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const ServicesComponent = () => {
   return (
-    <section className="c-section" id="services">
+    <section className="c-section" id="uslugi">
       <div className="about-bottom">
         <figure className="about-bottom__banner">
           <Image
@@ -39,7 +39,7 @@ const ServicesComponent = () => {
         {servicesData.map((service: ServiceData, idx: number) => (
           <li className="c-services__item" key={idx}>
             <h3>{service.header}</h3>
-            <p>{service.content}</p>
+            <p style={{fontSize: "16px"}}>{service.content}</p>
           </li>
         ))}
       </ul>

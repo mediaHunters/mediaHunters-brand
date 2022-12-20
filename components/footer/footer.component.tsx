@@ -41,7 +41,7 @@ const FooterComponent = () => {
                 <Topic>
                   <AiOutlinePhone /> Telefon
                 </Topic>
-                <li>+48 601 630 456</li>
+                <li>+48 731 985 567</li>
               </FooterLinkList>
 
               <FooterLinkList>
@@ -72,13 +72,13 @@ const FooterComponent = () => {
               </li>
 
               <li>
-                <FooterLink href="/cennik-strony.html">
+                <FooterLink href="/strony-internetowe">
                   Strony internetowe
                 </FooterLink>
               </li>
 
               <li>
-                <FooterLink href="/cennik-seo.html">Pozycjonowanie</FooterLink>
+                <FooterLink href="/pozycjonowanie">Pozycjonowanie</FooterLink>
               </li>
 
               <li>
@@ -92,7 +92,7 @@ const FooterComponent = () => {
               </li>
 
               <li>
-                <FooterLink href="/faq.html">FAQ’S</FooterLink>
+                <FooterLink href="/faq">FAQ’S</FooterLink>
               </li>
             </ul>
           </FooterLinkBox>
