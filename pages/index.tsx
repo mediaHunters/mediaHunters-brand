@@ -6,12 +6,12 @@ import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
 import HeaderComponent from "../components/header/header.component";
 import HeroBannerComponent from "../components/hero-banner/hero-banner.component";
+import ServicesComponent from "../components/services/services.component";
+
+
 import Head from "next/head";
 
 const WhyWe = dynamic(() => import("../components/why-we/why-we.conponent"));
-const ServicesComponent = dynamic(
-  () => import("../components/services/services.component")
-);
 const ContactFormComponent = dynamic(
   () => import("../components/contact/contact.component")
 );
@@ -38,7 +38,7 @@ const HomePage: NextPage = () => {
     },
     {
       text: "Usługi",
-      url: "#services",
+      url: "#uslugi",
       type: "link",
     },
     {

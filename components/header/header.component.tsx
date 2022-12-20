@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler, SyntheticEvent } from "react";
 import {
   MainHeaderWrapper,
   Container,
@@ -38,6 +38,7 @@ export class headerComponent extends React.Component<headerProps, headerState> {
     };
 
     this.links = this.addIdsToLinks(props.links)
+    console.log(this.props.links)
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
@@ -63,6 +64,8 @@ export class headerComponent extends React.Component<headerProps, headerState> {
         }
     });
   }
+
+
 
   updateDimensions() {
     if (typeof window !== "undefined") {
@@ -113,8 +116,8 @@ export class headerComponent extends React.Component<headerProps, headerState> {
                         key={link.url}
                         onClick={() => this.setState({ activeMenu: false })}
                       >
-                        <Link key={link.url} href={link.url} style={{scrollBehavior:'smooth'}}>
-                          <NavbarLink>
+                        <Link key={link.url} href={link.url}  passHref legacyBehavior>
+                          <NavbarLink>  
                             {link.text}
                           </NavbarLink>
                         </Link>
@@ -134,7 +137,7 @@ export class headerComponent extends React.Component<headerProps, headerState> {
                   }
                 }
               )}
-              <Link href="#contact" key="#contact"  style={{scrollBehavior:'smooth'}}>
+              <Link href="#contact" key="#contact">
                 <button className="btn btn--primary" key={"wycena"}>
                   Wycena
                 </button>

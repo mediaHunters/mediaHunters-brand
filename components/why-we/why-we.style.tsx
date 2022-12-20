@@ -94,6 +94,7 @@ export const TimelineContainer = styled.div`
 
 export const TimelineWrapper = styled.div`
   width: 80%;
+  font-size: 16px;
   height: auto;
   max-width: 800px;
   margin: 0 auto;
