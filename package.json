@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npx next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "npx next start",
     "lint": "npx next lint",
     "deploy": "npm run build && firebase login && firebase deploy",
