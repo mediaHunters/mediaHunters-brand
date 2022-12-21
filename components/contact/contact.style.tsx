@@ -4,7 +4,7 @@ export const ContactForm = styled.div`
   width: 80%;
   background: #fff;
   border-radius: 6px;
-  padding: 30px 60px 30px 40px;
+  padding: 30px 40px;
   box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.4);
   margin: 0 auto 50px auto;
   z-index: 5;
