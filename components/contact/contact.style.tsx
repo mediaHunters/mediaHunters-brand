@@ -4,7 +4,7 @@ export const ContactForm = styled.div`
   width: 80%;
   background: #fff;
   border-radius: 6px;
-  padding: 60px 60px 30px 40px;
+  padding: 30px 60px 30px 40px;
   box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.4);
   margin: 0 auto 50px auto;
   z-index: 5;
@@ -25,15 +25,16 @@ export const ContactForm = styled.div`
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   @media (max-width: 820px) {
     flex-direction: column-reverse;
+    justify-content: stretch;
+    align-items: stretch;
   }
 `;
 
 export const LeftSide = styled.div`
-  width: 60%;
+  width: 100%;
   height: 450px;
   display: flex;
   flex-direction: column;
