@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { ISeoTableData, SeoPackets } from "./seo-table.data";
+import { ISeoTableData, SeoPackets, TableDataType } from "./seo-table.data";
 import { PricingButton } from "./seo.style";
 
 interface ISeoTableComponent {
@@ -24,7 +24,7 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
           <li key="Pozycjonowanie stron ( SEO lokalne )" className="h4">
             Pozycjonowanie stron ( SEO lokalne )
           </li>
-          {props.data.seoWebsites.map((elem: any) => {
+          {props.data.seoWebsites.map((elem: TableDataType) => {
             if (elem[props.type]) {
               return (
                 <li className="mb-3" key={elem.text}>
@@ -45,7 +45,7 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
           <li key="Pozycjonowanie" className="h4">
             Pozycjonowanie
           </li>
-          {props.data.seo.map((elem: any, idx: number) => {
+          {props.data.seo.map((elem: TableDataType) => {
             if (elem[props.type]) {
               return (
                 <li className="mb-3" key={elem.text}>
@@ -66,7 +66,7 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
           <li key="Administracja" className="h4">
             Administracja
           </li>
-          {props.data.administration.map((elem: any, idx: number) => {
+          {props.data.administration.map((elem: TableDataType) => {
             if (elem[props.type]) {
               return (
                 <li className="mb-3" key={elem.text}>

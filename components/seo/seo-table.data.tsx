@@ -1,6 +1,6 @@
 
 
-interface TableDataType {
+export interface TableDataType {
     text: string;
     basic: boolean;
     pro: boolean;

@@ -24,10 +24,10 @@ const initialState: IContactFormState = {
   message: "",
 };
 
-class ContactFormComponent extends React.Component<any, IContactFormState> {
+class ContactFormComponent extends React.Component<unknown, IContactFormState> {
   private readonly recaptchaRef = React.createRef<ReCAPTCHA>();
 
-  constructor(props: any) {
+  constructor(props: unknown) {
     super(props);
     this.state = {
       name: "",
@@ -46,7 +46,7 @@ class ContactFormComponent extends React.Component<any, IContactFormState> {
     const target = event.target as HTMLInputElement | HTMLTextAreaElement;
 
     this.setState({
-      [target.name]: target?.value as any,
+      [target.name]: target?.value,
     });
   };
 
@@ -101,7 +101,7 @@ class ContactFormComponent extends React.Component<any, IContactFormState> {
                 action="#"
                 id="contact-form"
                 method="POST"
-                onSubmit={this.onSubmit as any}
+                onSubmit={() => this.onSubmit}
               >
                 <InputWrapper>
                   <input

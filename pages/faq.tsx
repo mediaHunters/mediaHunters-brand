@@ -15,7 +15,7 @@ export interface IFaqState {
   questions: IFaqQuestion[]
 }
 
-class Faq extends React.Component<any, IFaqState> {
+class Faq extends React.Component<unknown, IFaqState> {
   private readonly links: Array<LinkText | LinkDropdown> = [
     {
       text: "Home",
@@ -43,7 +43,7 @@ class Faq extends React.Component<any, IFaqState> {
     },
   ];
 
-  constructor(props: any) {
+  constructor(props: unknown) {
     super(props);
     this.state = {
       questions: faqQuestions,
