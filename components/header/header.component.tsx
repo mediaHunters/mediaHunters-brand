@@ -38,7 +38,6 @@ export class headerComponent extends React.Component<headerProps, headerState> {
     };
 
     this.links = this.addIdsToLinks(props.links)
-    console.log(this.props.links)
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 

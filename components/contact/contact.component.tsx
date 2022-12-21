@@ -71,7 +71,6 @@ class ContactFormComponent extends React.Component<any, IContactFormState> {
     })
       .then((): void => {
         this.setState(initialState);
-        console.log('lol')
         toast.success("Twoja wiadomość została pomyślnie wysłana!");
       })
       .catch((): void => {
