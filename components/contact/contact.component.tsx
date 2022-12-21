@@ -58,7 +58,7 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
   }
 
   sendEmail(token: string) {
-    fetch(`https://mediahunters.pl/api/send-email`, {
+    fetch(`http://localhost:3000/api/send-email`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -101,7 +101,7 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
                 action="#"
                 id="contact-form"
                 method="POST"
-                onSubmit={() => this.onSubmit}
+                onSubmit={this.onSubmit as any}
               >
                 <InputWrapper>
                   <input
