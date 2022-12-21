@@ -7,42 +7,51 @@ import {
   ProjectsWrapper,
 } from "./projects.style";
 
-type ProjectsFilters = "all" | "wordpress" | "dedicated";
+type ProjectsFiltersTypes = "all" | "wordpress" | "dedicated";
 
-function ProjectsComponent() {
-    const [filtersObject, setFiltersObject] = useState({
-        activeIndex: 0,
-        filters: [
-          {
-            text: "Wszystkie",
-            value: "all",
-            active: true,
-          },
-          {
-            text: "Wordpress",
-            value: "wordpress",
-            active: false,
-          },
-          {
-            text: "Dedykowane",
-            value: "dedicated",
-            active: false,
-          },
-        ],
-      })
+interface IFitlerBlock {
+  text: string;
+  value: ProjectsFiltersTypes;
+  active: boolean;
+}
 
-  function changeCategory(idx: number) {
+interface IFilterObject {
+  activeIndex: number;
+  filters: IFitlerBlock[];
+}
 
-    setFiltersObject(prevState => {
-    filtersObject.filters[filtersObject.activeIndex].active = false;
-    filtersObject.filters[idx].active = true;
-    filtersObject.activeIndex = idx;
-        return {
-            ...prevState,
-            filtersObject
-        }
+function ProjectsComponent(): JSX.Element {
+  const [filters, setFilters] = useState<IFilterObject>({
+    activeIndex: 0,
+    filters: [
+      {
+        text: "Wszystkie",
+        value: "all",
+        active: true,
+      },
+      {
+        text: "Wordpress",
+        value: "wordpress",
+        active: false,
+      },
+      {
+        text: "Dedykowane",
+        value: "dedicated",
+        active: false,
+      },
+    ],
+  });
+
+  function changeCategory(idx: number): void {
+    setFilters((prevFilters: IFilterObject): IFilterObject => {
+      const updatedFilters = [...prevFilters.filters];
+      updatedFilters.forEach((filter: IFitlerBlock) => (filter.active = false));
+      updatedFilters[idx].active = true;
+      return {
+        activeIndex: idx,
+        filters: updatedFilters,
+      };
     });
-
   }
   return (
     <ProjectsWrapper className="container">
@@ -58,7 +67,7 @@ function ProjectsComponent() {
 
       <FiltersSection>
         Filters:
-        {filtersObject.filters.map((filter, idx: number) => (
+        {filters.filters.map((filter, idx: number) => (
           <FilterButton
             active={filter.active}
             onClick={() => changeCategory(idx)}

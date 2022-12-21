@@ -1,5 +1,4 @@
 import Link from "next/link";
-import FooterComponent from "../footer/footer.component";
 import { Footer } from "../footer/footer.style";
 import {
   WebsitesMainHeader,
