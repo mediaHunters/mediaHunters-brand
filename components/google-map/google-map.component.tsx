@@ -15,6 +15,7 @@ function GoogleMapContainer() {
         center={center}
         zoom={15}
         mapContainerClassName="google-map-container"
+        mapContainerStyle={{margin: '0 auto', "width": "100%", "maxHeight":"500px", height: "100%"}}
       >
         <Marker key={'Media hunters'} position={center}/>
       </GoogleMap>
