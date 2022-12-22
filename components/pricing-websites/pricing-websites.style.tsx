@@ -14,7 +14,7 @@ export const WebsitesDescription = styled.p`
   font-size: 18px;
   font-weight: 300;
   line-height: 1.4;
-  color: ${(props) => lighten(0.2, '#000')};
+  color: ${() => lighten(0.2, '#000')};
   margin-bottom: 120px;
 `;
 
@@ -41,7 +41,7 @@ export const WebsitesGridHeaderText = styled.p`
   font-size: 18px;
   font-weight: 300;
   line-height: 1.4;
-  color: ${(props) => lighten(0.2, '#000')};
+  color: ${() => lighten(0.2, '#000')};
   margin-bottom: 30px;
 `;
 

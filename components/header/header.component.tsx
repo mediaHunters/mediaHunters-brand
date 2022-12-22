@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, SyntheticEvent } from "react";
+import React from "react";
 import {
   MainHeaderWrapper,
   Container,
@@ -38,7 +38,6 @@ export class headerComponent extends React.Component<headerProps, headerState> {
     };
 
     this.links = this.addIdsToLinks(props.links)
-    console.log(this.props.links)
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
@@ -75,7 +74,7 @@ export class headerComponent extends React.Component<headerProps, headerState> {
       
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
-      const scrolled = (winScroll / height).toExponential(4) as any * 100
+      const scrolled = parseInt((winScroll / height).toExponential(4), 10) * 100
 
       this.setState({ width, scrollY: scrolled });
     }

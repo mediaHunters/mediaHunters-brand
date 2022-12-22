@@ -1,0 +1,77 @@
+import * as functions from "firebase-functions";
+import express from "express";
+import * as bodyParser from "body-parser";
+import sgMail, { MailDataRequired } from "@sendgrid/mail";
+import { verifyUser } from "../utils/helpers";
+
+const app = express();
+const main = express();
+main.use("/api/v1", app);
+main.use(bodyParser.json());
+main.use(bodyParser.urlencoded({ extended: false }));
+
+const webApi = functions.https.onRequest(main);
+
+app.post("/send-email", async (req, res) => {
+  const { name, email, phone, message, captcha } = JSON.parse(req.body);
+
+  sgMail.setApiKey(process.env.SENDGRID_KEY as string);
+  console.log("hello");
+  const msg = {
+    from: "hello.mediahunters@gmail.com",
+    to: "hello.mediahunters@gmail.com",
+    subject: `${email} - ${phone} | ${name}`,
+    content: [
+      {
+        type: "text/plain",
+        value: message,
+      },
+    ],
+  };
+
+  if (verifyUser(captcha, res as any)) {
+    await sgMail.send(msg as MailDataRequired);
+    res.json({
+      success: true,
+      msg: "valid user",
+    });
+  }
+});
+
+exports.webApi = webApi
+
+
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "axios": "^1.2.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "nodemailer": "^6.8.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}

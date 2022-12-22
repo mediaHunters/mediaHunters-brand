@@ -24,10 +24,10 @@ const initialState: IContactFormState = {
   message: "",
 };
 
-class ContactFormComponent extends React.Component<any, IContactFormState> {
+class ContactFormComponent extends React.Component<unknown, IContactFormState> {
   private readonly recaptchaRef = React.createRef<ReCAPTCHA>();
 
-  constructor(props: any) {
+  constructor(props: unknown) {
     super(props);
     this.state = {
       name: "",
@@ -46,7 +46,7 @@ class ContactFormComponent extends React.Component<any, IContactFormState> {
     const target = event.target as HTMLInputElement | HTMLTextAreaElement;
 
     this.setState({
-      [target.name]: target?.value as any,
+      [target.name]: target?.value,
     });
   };
 
@@ -58,7 +58,8 @@ class ContactFormComponent extends React.Component<any, IContactFormState> {
   }
 
   sendEmail(token: string) {
-    fetch(`https://mediahunters.pl/api/send-email`, {
+    console.log('qweqw')
+    fetch(`https://localhost:300/send-email`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -71,10 +72,10 @@ class ContactFormComponent extends React.Component<any, IContactFormState> {
     })
       .then((): void => {
         this.setState(initialState);
-        console.log('lol')
         toast.success("Twoja wiadomość została pomyślnie wysłana!");
       })
-      .catch((): void => {
+      .catch((err): void => {
+        console.log(err)
         toast.error("Wystąpił problem, spróbuj ponownie na chwile");
       });
   }
