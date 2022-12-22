@@ -58,7 +58,8 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
   }
 
   sendEmail(token: string) {
-    fetch(`http://localhost:3000/api/send-email`, {
+    console.log('qweqw')
+    fetch(`https://localhost:300/send-email`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -73,7 +74,8 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
         this.setState(initialState);
         toast.success("Twoja wiadomość została pomyślnie wysłana!");
       })
-      .catch((): void => {
+      .catch((err): void => {
+        console.log(err)
         toast.error("Wystąpił problem, spróbuj ponownie na chwile");
       });
   }

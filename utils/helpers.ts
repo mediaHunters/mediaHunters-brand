@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { NextApiResponse } from "next";
 
 function verifyUser(captcha: string, res: NextApiResponse) {
