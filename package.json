@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx next dev",
     "build": "npx next build && npx next export",
-    "start": "npx next start",
+    "start": "next start -p $PORT",
     "lint": "npx next lint",
     "deploy": "npm run build && firebase login && firebase deploy",
     "postbuild": "next-sitemap"
