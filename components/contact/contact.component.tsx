@@ -59,7 +59,7 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
 
   sendEmail(token: string) {
     console.log('qweqw')
-    fetch(`https://localhost:300/send-email`, {
+    fetch(`https://mediahunters.pl/send-email`, {
       headers: {
         "Content-Type": "application/json",
       },
