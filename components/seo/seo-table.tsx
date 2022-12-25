@@ -2,6 +2,8 @@ import Link from "next/link";
 import React from "react";
 import { ISeoTableData, SeoPackets, TableDataType } from "./seo-table.data";
 import { PricingButton } from "./seo.style";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faTimes, faAnchor } from "@fortawesome/free-solid-svg-icons";
 
 interface ISeoTableComponent {
   data: ISeoTableData;
@@ -28,14 +30,21 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
             if (elem[props.type]) {
               return (
                 <li className="mb-3" key={elem.text}>
-                  <i className="fa fa-check mr-2 cr-primary-bittersweet"></i>
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    style={{ marginRight: "10px" }}
+                    className=" cr-primary-bittersweet"
+                  />
                   {elem.text}
                 </li>
               );
             } else {
               return (
                 <li className="mb-3 text-muted" key={elem.text}>
-                  <i className="fa fa-times mr-2"></i>
+                  <FontAwesomeIcon
+                    icon={faTimes}
+                    style={{ marginRight: "10px" }}
+                  />
                   <del>{elem.text}</del>
                 </li>
               );
@@ -49,14 +58,18 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
             if (elem[props.type]) {
               return (
                 <li className="mb-3" key={elem.text}>
-                  <i className="fa fa-check mr-2 cr-primary-bittersweet"></i>
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    style={{ marginRight: "10px" }}
+                    className=" cr-primary-bittersweet"
+                  />
                   {elem.text}
                 </li>
               );
             } else {
               return (
                 <li className="mb-3 text-muted" key={elem.text}>
-                  <i className="fa fa-times mr-2"></i>
+                  <FontAwesomeIcon icon={faTimes} className="mr-5" />
                   <del>{elem.text}</del>
                 </li>
               );
@@ -70,14 +83,21 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
             if (elem[props.type]) {
               return (
                 <li className="mb-3" key={elem.text}>
-                  <i className="fa fa-check mr-2 cr-primary-bittersweet"></i>
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    style={{ marginRight: "10px" }}
+                    className=" cr-primary-bittersweet"
+                  />
                   {elem.text}
                 </li>
               );
             } else {
               return (
                 <li className="mb-3 text-muted" key={elem.text}>
-                  <i className="fa fa-times mr-2"></i>
+                  <FontAwesomeIcon
+                    icon={faTimes}
+                    style={{ marginRight: "10px" }}
+                  />
                   <del>{elem.text}</del>
                 </li>
               );
@@ -86,7 +106,9 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
         </ul>
         <div className="mb-5"></div>
         <PricingButton className="btn btn-block p-2 shadow rounded-pill">
-          <Link href="/#contact"><a>Skontaktuj się!</a></Link>
+          <Link href="/#contact">
+            <a>Skontaktuj się!</a>
+          </Link>
         </PricingButton>
       </div>
     </div>
