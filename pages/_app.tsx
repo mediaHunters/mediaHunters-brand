@@ -1,4 +1,10 @@
 import "react-toastify/dist/ReactToastify.css";
+
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false; 
+import 'bootstrap/dist/css/bootstrap.css'
+
 import "../styles/globals.scss";
 import "../styles/services.scss";
 import "../styles/cookies.scss";
@@ -26,10 +32,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     Router.events.on("routeChangeComplete", () => NProgress.done());
     Router.events.on("routeChangeError", () => NProgress.done());
   }, [])
+
   return (
     <Theme>
       <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=UA-237114672-1"

@@ -4,7 +4,7 @@ export const PricingSection = styled.section`
   margin: 60px auto;
 `;
 
-export const PricingButton = styled.a`
+export const PricingButton = styled.button`
   display: block;
   width: 100%;
   border: 1px solid #5839f6;
