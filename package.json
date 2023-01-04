@@ -8,7 +8,7 @@
     "start": "next start -p $PORT",
     "lint": "npx next lint",
     "deploy": "npm run build && firebase login && firebase deploy"
-    },
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
@@ -33,6 +33,7 @@
     "react-icons": "^4.6.0",
     "react-toastify": "^9.0.8",
     "sass": "^1.55.0",
+    "sitemap": "^7.1.1",
     "styled-components": "^5.3.6",
     "uuid": "^9.0.0"
   },
