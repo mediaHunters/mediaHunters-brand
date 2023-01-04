@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
   trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
   experimental: {
     splitChunks: false,
   },
