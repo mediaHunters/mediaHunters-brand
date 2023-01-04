@@ -6,6 +6,9 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
+  experimental: {
+    splitChunks: false,
+  },
   async headers() {
     return [
       {
