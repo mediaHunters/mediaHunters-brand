@@ -6,14 +6,6 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/sitemap',
-        destination: '/sitemap.xml',
-      },
-    ]
-  },
   async headers() {
     return [
       {

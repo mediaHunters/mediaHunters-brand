@@ -1,4 +1,4 @@
-import { AppType } from 'next/app'
+import { AppType } from 'next/dist/shared/lib/utils'
 import Document, { DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App: AppType<any>) => (props: any) =>
+          enhanceApp: (App: AppType) => (props: any) =>
             sheet.collectStyles(<App {...props} />),
         })
 
