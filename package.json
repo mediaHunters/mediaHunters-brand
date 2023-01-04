@@ -7,9 +7,8 @@
     "build": "npx next build",
     "start": "next start -p $PORT",
     "lint": "npx next lint",
-    "deploy": "npm run build && firebase login && firebase deploy",
-    "postbuild": "next-sitemap"
-  },
+    "deploy": "npm run build && firebase login && firebase deploy"
+    },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
