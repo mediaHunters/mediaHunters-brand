@@ -73,7 +73,7 @@ const HomePage: NextPage = () => {
         <title>Media hunters</title>
         <meta
           name="title"
-          content="Strony internetowe Wrocław, projektowanie i tworzenie stron WWW"
+          content="Strony Internetowe Wrocław – Media Hunters"
         />
         <meta
           name="description"

@@ -1,5 +1,9 @@
-import React from 'react';
-import { IoCheckmarkDoneSharp, IoRocketOutline, IoWalletOutline } from 'react-icons/io5';
+import React from "react";
+import {
+  IoCheckmarkDoneSharp,
+  IoRocketOutline,
+  IoWalletOutline,
+} from "react-icons/io5";
 import {
   AboutCard,
   AboutCardIcon,
@@ -22,23 +26,21 @@ const WhyWe = () => {
     <AboutUs className="about-us" id="dlaczego-my">
       <div className="container">
         <AboutUsTop>
-          <AboutUsSectionTitle>
-            Dlaczego warto wybrać właśnie nas?
-          </AboutUsSectionTitle>
+          <AboutUsSectionTitle>Strony WWW szyte na miarę.</AboutUsSectionTitle>
 
           <AboutUsSectionParagaph>
-            W Internecie nietrudno znaleźć oferty oparte o darmowe kreatory
-            stron internetowych. My podchodzimy do tematu znacznie ambitniej.
-            Strona Twojej firmy zostanie napisana od zera przez doświadczonego
-            programistę. Dzięki temu będzie dużo szybsza, bezpieczniejsza oraz
-            skrojona na miarę Twoich potrzeb.
+            Jesteśmy praktykami w branży, którzy słuchają potrzeb swoich
+            Klientów. Powiedz nam czego oczekujesz, a my to dla Ciebie
+            stworzymy. Możemy zaproponować nowoczesne szablony WordPress lub
+            stworzyć indywidualny projekt strony internetowej według Twoich
+            wytycznych.
           </AboutUsSectionParagaph>
 
           <AboutUsList>
             <li>
               <AboutCard>
                 <AboutCardIcon>
-                  <IoCheckmarkDoneSharp/>
+                  <IoCheckmarkDoneSharp />
                 </AboutCardIcon>
 
                 <AboutCardTitle>Najwyższa jakość</AboutCardTitle>
@@ -86,53 +88,53 @@ const WhyWe = () => {
             </li>
           </AboutUsList>
         </AboutUsTop>
-          
-          <TimelineContainer id="wspolpraca">
-            <AboutUsSectionTitle>Współpraca z nami</AboutUsSectionTitle>
-            <TimelineWrapper>
-              <TimeLlineList>
-                <TimeLlineElement>
-                  <div className="timeline-container__wrapper__content">
-                    <TimelineHeader>Krok 1</TimelineHeader>
-                    <p>
-                      Klient przedstawia nam swoje wymagania oraz założenia
-                      projektu. Wspólnie przedyskutujemy wstępne wytyczne, które
-                      będą miały wpływ na wygląd i funkcjonowanie strony
-                      internetowej.
-                    </p>
-                  </div>
-                </TimeLlineElement>
-                <TimeLlineElement>
-                  <div className="timeline-container__wrapper__content">
-                    <TimelineHeader>Krok 2</TimelineHeader>
-                    <p>
-                      Przedstawienie wyceny projektu oraz akceptacja ze strony
-                      Klienta.
-                    </p>
-                  </div>
-                </TimeLlineElement>
-                <TimeLlineElement>
-                  <div className="timeline-container__wrapper__content">
-                    <TimelineHeader>Krok 3</TimelineHeader>
-                    <p>
-                      Realizacja oraz zaprezentowanie nowej strony internetowej. W
-                      tym etapie konsultujemy i wdrażamy ewentualne poprawki, aż
-                      do uzyskania całkowitej satysfakcji po stronie Klienta.
-                    </p>
-                  </div>
-                </TimeLlineElement>
-                <TimeLlineElement>
-                  <div className="timeline-container__wrapper__content">
-                    <TimelineHeader>Krok 4</TimelineHeader>
-                    <p>
-                      Po wszystkich testach następuje publikacja gotowego
-                      produktu.
-                    </p>
-                  </div>
-                </TimeLlineElement>
-              </TimeLlineList>
-            </TimelineWrapper>
-          </TimelineContainer>
+
+        <TimelineContainer id="wspolpraca">
+          <AboutUsSectionTitle>Współpraca z nami</AboutUsSectionTitle>
+          <TimelineWrapper>
+            <TimeLlineList>
+              <TimeLlineElement>
+                <div className="timeline-container__wrapper__content">
+                  <TimelineHeader>Krok 1</TimelineHeader>
+                  <p>
+                    Klient przedstawia nam swoje wymagania oraz założenia
+                    projektu. Wspólnie przedyskutujemy wstępne wytyczne, które
+                    będą miały wpływ na wygląd i funkcjonowanie strony
+                    internetowej.
+                  </p>
+                </div>
+              </TimeLlineElement>
+              <TimeLlineElement>
+                <div className="timeline-container__wrapper__content">
+                  <TimelineHeader>Krok 2</TimelineHeader>
+                  <p>
+                    Przedstawienie wyceny projektu oraz akceptacja ze strony
+                    Klienta.
+                  </p>
+                </div>
+              </TimeLlineElement>
+              <TimeLlineElement>
+                <div className="timeline-container__wrapper__content">
+                  <TimelineHeader>Krok 3</TimelineHeader>
+                  <p>
+                    Realizacja oraz zaprezentowanie nowej strony internetowej. W
+                    tym etapie konsultujemy i wdrażamy ewentualne poprawki, aż
+                    do uzyskania całkowitej satysfakcji po stronie Klienta.
+                  </p>
+                </div>
+              </TimeLlineElement>
+              <TimeLlineElement>
+                <div className="timeline-container__wrapper__content">
+                  <TimelineHeader>Krok 4</TimelineHeader>
+                  <p>
+                    Po wszystkich testach następuje publikacja gotowego
+                    produktu.
+                  </p>
+                </div>
+              </TimeLlineElement>
+            </TimeLlineList>
+          </TimelineWrapper>
+        </TimelineContainer>
       </div>
     </AboutUs>
   );
