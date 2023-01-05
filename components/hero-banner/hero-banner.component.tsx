@@ -15,16 +15,16 @@ const HeroBannerComponent = () => {
           </HeroContentTitle>
 
           <p className="hero__content__text">
-            Jesteśmy lokalną firmą skupiającą praktyktów w branży tworzenia oraz
-            promocji stron internetowych we Wrocławiu i okolicach
+            Tworzenie stron internetowych Wrocław - atrakcyjnej i skuteczne
+            strony WWW wraz z usługą pozycjonowania oraz administracji.
+            Kompleksowa usługa dla osób indywidualnych oraz biznesu.
           </p>
 
           <a href="#dlaczego-my">
             <button className="btn btn--primary">Zacznijmy!</button>
           </a>
 
-        <div className="hero__content__banner"></div>
-
+          <div className="hero__content__banner"></div>
         </HeroContent>
 
         <div className="hero__content__banner"></div>

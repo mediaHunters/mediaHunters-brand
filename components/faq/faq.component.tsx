@@ -2,15 +2,17 @@ import React from "react";
 import { IFaqQuestion } from "./faq.questions";
 import {
   FaqQuestionsContainer,
+  FaqQuestionsContainerDescription,
   FaqQuestionsContainerHeader,
   FaqQuestionsContainerInputBox,
+  FaqQuestionsContainerSubHeader,
   FaqQuestionsWrapper,
   QuestionCard,
   QuestionDescrption,
   QuestionHeader,
   SearchIcon,
 } from "./faq.style";
-import Image from 'next/image';
+import Image from "next/image";
 interface IFaqProps {
   questions: IFaqQuestion[];
   updateSearchedQuestions: (searchText: string) => void;
@@ -52,10 +54,20 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
       <FaqQuestionsContainer className="container">
         <div>
           <FaqQuestionsContainerHeader>
-            <Image src="/images/waving-hand.png" alt="waving hand" width="100%" height="100%" priority={true}/>
-            FAQ’S - Najczęściej zadawane pytania
+            <Image
+              src="/images/waving-hand.png"
+              alt="waving hand"
+              width="40px"
+              height="40px"
+              priority={true}
+            />
+            <FaqQuestionsContainerSubHeader>FAQ’S - Najczęściej zadawane pytania</FaqQuestionsContainerSubHeader>
           </FaqQuestionsContainerHeader>
-
+          <FaqQuestionsContainerDescription>
+            W tej sekcji znajdziesz odpowiedzi na najbardziej nurtujące pytania.
+            Jeśli jednak nie uda Ci się znaleźć rozwiązania, skontaktuj się z
+            nami - odpowiemy najszybciej jak to możliwe.
+          </FaqQuestionsContainerDescription>
           <FaqQuestionsContainerInputBox>
             <SearchIcon className="form-control-feedback" />
             <input

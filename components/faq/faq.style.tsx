@@ -13,11 +13,18 @@ export const FaqQuestionsContainerHeader = styled.h1`
   font-size: 40px;
   font-weight: 500;
   color: #000;
-  img {
-    width: 100%;
-    max-width: 40px;
-    margin-right: 20px;
-  }
+`;
+
+export const FaqQuestionsContainerSubHeader = styled.p`
+  margin-left: 20px;
+`
+
+export const FaqQuestionsContainerDescription = styled.p`
+  font-weight: 300;
+  line-height: 18px;
+  margin: 10px 0 10px 10px;
+  color: lighten(0.2, #000);
+  max-width: 650px;
 `;
 
 export const FaqQuestionsContainerInputBox = styled.div`
