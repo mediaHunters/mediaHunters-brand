@@ -24,6 +24,7 @@ const FooterComponent = () => {
                 src="/images/MediaHunters.png"
                 width="125px"
                 height="125px"
+                priority={true}
               />
             </FooterLink>
           </FooterBrand>

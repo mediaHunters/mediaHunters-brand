@@ -102,6 +102,7 @@ export class headerComponent extends React.Component<headerProps, headerState> {
               src="/images/MediaHunters.png"
               width="125px"
               height="125px"
+              priority={true}
             />
             </a>
           </Link>

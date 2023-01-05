@@ -52,7 +52,7 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
       <FaqQuestionsContainer className="container">
         <div>
           <FaqQuestionsContainerHeader>
-            <Image src="/images/waving-hand.png" alt="waving hand" width="100%" height="100%"/>
+            <Image src="/images/waving-hand.png" alt="waving hand" width="100%" height="100%" priority={true}/>
             FAQ’S - Najczęściej zadawane pytania
           </FaqQuestionsContainerHeader>
 

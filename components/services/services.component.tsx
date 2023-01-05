@@ -13,6 +13,7 @@ const ServicesComponent = () => {
             loading="lazy"
             width="400px"
             height="500px"
+            priority={true}
           />
         </figure>
 
