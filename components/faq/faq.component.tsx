@@ -6,6 +6,7 @@ import {
   FaqQuestionsContainerHeader,
   FaqQuestionsContainerInputBox,
   FaqQuestionsContainerSubHeader,
+  FaqQuestionsHeaderWrapper,
   FaqQuestionsWrapper,
   QuestionCard,
   QuestionDescrption,
@@ -24,6 +25,7 @@ interface IFaqState {
 }
 
 class FaqComponent extends React.Component<IFaqProps, IFaqState> {
+  // TODO find way to reset array when click backspace and string is empty
   constructor(props: IFaqProps) {
     super(props);
     this.state = {
@@ -51,8 +53,8 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
 
   render() {
     return (
-      <FaqQuestionsContainer className="container">
-        <div>
+      <FaqQuestionsContainer>
+          <FaqQuestionsHeaderWrapper>
           <FaqQuestionsContainerHeader>
             <Image
               src="/images/waving-hand.png"
@@ -79,7 +81,7 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
               placeholder="Szukaj..."
             />
           </FaqQuestionsContainerInputBox>
-        </div>
+          </FaqQuestionsHeaderWrapper>
 
         <FaqQuestionsWrapper>
           {this.props.questions.map((question: IFaqQuestion, idx: number) => {

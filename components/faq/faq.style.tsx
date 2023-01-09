@@ -5,7 +5,14 @@ import { AiOutlineSearch } from "react-icons/ai";
 export const FaqQuestionsContainer = styled.main`
   padding-left: 60px;
   margin-bottom: 60px;
+  max-width: 1340px;
+  width: 100%;
+  margin: 0 auto 50px auto;
 `;
+
+export const FaqQuestionsHeaderWrapper = styled.div`
+  padding-left: 20px;
+`
 
 export const FaqQuestionsContainerHeader = styled.h1`
   display: flex;

@@ -80,7 +80,7 @@ const WhyWe = () => {
 
                 <AboutCardText>
                   Nie jesteśmy wielką korporacją obciążoną wysokimi kosztami.
-                  Dzięki temu będzie możemy zaoferować bardzo konkurencyjne
+                  Dzięki temu możemy zaoferować bardzo konkurencyjne
                   stawki. Daj się zaskoczyć i sprawdź, jak mało może kosztować
                   dedykowana strona
                 </AboutCardText>
