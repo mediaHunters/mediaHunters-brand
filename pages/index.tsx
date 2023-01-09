@@ -70,7 +70,7 @@ const HomePage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Media hunters</title>
+        <title>Strony Internetowe Wrocław – Media Hunters</title>
         <meta
           name="title"
           content="Strony Internetowe Wrocław – Media Hunters"
