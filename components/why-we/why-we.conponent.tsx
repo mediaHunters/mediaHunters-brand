@@ -80,7 +80,7 @@ const WhyWe = () => {
 
                 <AboutCardText>
                   Nie jesteśmy wielką korporacją obciążoną wysokimi kosztami.
-                  Dzięki temu będzie możemy zaoferować bardzo konkurencyjne
+                  Dzięki temu możemy zaoferować bardzo konkurencyjne
                   stawki. Daj się zaskoczyć i sprawdź, jak mało może kosztować
                   dedykowana strona
                 </AboutCardText>
@@ -97,10 +97,8 @@ const WhyWe = () => {
                 <div className="timeline-container__wrapper__content">
                   <TimelineHeader>Krok 1</TimelineHeader>
                   <p>
-                    Klient przedstawia nam swoje wymagania oraz założenia
-                    projektu. Wspólnie przedyskutujemy wstępne wytyczne, które
-                    będą miały wpływ na wygląd i funkcjonowanie strony
-                    internetowej.
+                    Analiza potrzeb Klienta. Spojrzenie na konkurencję, słowa
+                    kluczowe i zestawienie z budżetem.
                   </p>
                 </div>
               </TimeLlineElement>
@@ -108,8 +106,8 @@ const WhyWe = () => {
                 <div className="timeline-container__wrapper__content">
                   <TimelineHeader>Krok 2</TimelineHeader>
                   <p>
-                    Przedstawienie wyceny projektu oraz akceptacja ze strony
-                    Klienta.
+                    Zaplanowanie struktury oraz treści strony. Projekt graficzny
+                    oraz prezentacja funkcjonalności.
                   </p>
                 </div>
               </TimeLlineElement>
@@ -117,9 +115,8 @@ const WhyWe = () => {
                 <div className="timeline-container__wrapper__content">
                   <TimelineHeader>Krok 3</TimelineHeader>
                   <p>
-                    Realizacja oraz zaprezentowanie nowej strony internetowej. W
-                    tym etapie konsultujemy i wdrażamy ewentualne poprawki, aż
-                    do uzyskania całkowitej satysfakcji po stronie Klienta.
+                    Wybór odpowiedniego systemu zarządzania treścią. Akceptacja
+                    po stronie Klienta.
                   </p>
                 </div>
               </TimeLlineElement>
@@ -127,8 +124,8 @@ const WhyWe = () => {
                 <div className="timeline-container__wrapper__content">
                   <TimelineHeader>Krok 4</TimelineHeader>
                   <p>
-                    Po wszystkich testach następuje publikacja gotowego
-                    produktu.
+                    Publikacja strony internetowej i ewentualne poprawki.
+                    Administracja oraz dalszy rozwój.
                   </p>
                 </div>
               </TimeLlineElement>
