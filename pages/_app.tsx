@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Theme>
       <Head>
+      <link rel="shortcut icon" href="#"></link>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Script
