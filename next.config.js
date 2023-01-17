@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
-  trailingSlash: true,
   experimental: {
     splitChunks: false,
   },
