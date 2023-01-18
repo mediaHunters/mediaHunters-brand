@@ -38,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
       <link rel="shortcut icon" href="#"></link>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="google-site-verification" content="nkpPTpP-0xL8HdHEdKuOKsLyuNvYSTKcSMsGbWvsoEg" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=UA-237114672-1"
