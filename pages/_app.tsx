@@ -21,6 +21,7 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
+import { GlobalModal } from "../components/modal/globalModal.component";
 
 
 
@@ -38,6 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
       <link rel="shortcut icon" href="#"></link>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="google-site-verification" content="nkpPTpP-0xL8HdHEdKuOKsLyuNvYSTKcSMsGbWvsoEg" />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=UA-237114672-1"
@@ -52,6 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'UA-237114672-1');
         `}
       </Script>
+      <GlobalModal>
       <Component {...pageProps} />
       <CookieConsent
         enableDeclineButton
@@ -86,6 +89,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         closeOnClick
         pauseOnHover
       />
+      </GlobalModal>
+
     </Theme>
   );
 }

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { LinkDropdown } from "../../interfaces/link.interface";
 import { NavbarItem, NavbarLink } from "../header/header.style";
 import { NavbarLinkDropdownWrapper } from "./dropdown.style";

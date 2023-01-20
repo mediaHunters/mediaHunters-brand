@@ -1,26 +1,35 @@
-import { useState } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { useEffect, useRef, useState } from "react";
 import {
   FilterButton,
+  FilterProjectsCard,
+  FilterProjectsCardImage,
+  FilterProjectsOverlay,
+  FilterProjectsSection,
   FiltersSection,
   ProjectsMainHeader,
   ProjectSubHeaderDescription,
   ProjectsWrapper,
 } from "./projects.style";
-
-type ProjectsFiltersTypes = "all" | "wordpress" | "dedicated";
-
-interface IFitlerBlock {
-  text: string;
-  value: ProjectsFiltersTypes;
-  active: boolean;
-}
-
-interface IFilterObject {
-  activeIndex: number;
-  filters: IFitlerBlock[];
-}
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  MODAL_TYPES,
+  useGlobalModalContext,
+} from "../modal/globalModal.component";
+import {
+  IFilterObject,
+  IFitlerBlock,
+  IProjects,
+  projects,
+} from "./projects.data";
 
 function ProjectsComponent(): JSX.Element {
+  const { showModal } = useGlobalModalContext();
+
+  const allProjects = useRef<IProjects[]>(projects);
+  const [filteredProjects, setFilteredProjects] = useState<IProjects[]>([]);
+
   const [filters, setFilters] = useState<IFilterObject>({
     activeIndex: 0,
     filters: [
@@ -53,6 +62,32 @@ function ProjectsComponent(): JSX.Element {
       };
     });
   }
+  function openModal({
+    description,
+    stack,
+    link,
+    imageUrl,
+  }: Omit<IProjects, "title" | "type">): void {
+    showModal(MODAL_TYPES.PROJECT_MODAL, {
+      description,
+      stack,
+      link,
+      imageUrl,
+    });
+  }
+
+  useEffect(() => {
+    allProjects.current =
+      filters.filters[filters.activeIndex].value === "all"
+        ? projects
+        : projects.filter(
+            (project: IProjects) =>
+              project.type === filters.filters[filters.activeIndex].value
+          );
+    setFilteredProjects(allProjects.current);
+    console.log(filteredProjects);
+  }, [filters]);
+
   return (
     <ProjectsWrapper className="container">
       <ProjectsMainHeader>Projekty</ProjectsMainHeader>
@@ -77,6 +112,39 @@ function ProjectsComponent(): JSX.Element {
           </FilterButton>
         ))}
       </FiltersSection>
+
+      <FilterProjectsSection className="container card-group">
+        {filteredProjects.map(
+          (
+            { title, imageUrl, description, stack, link }: IProjects,
+            idx: number
+          ) => (
+            <FilterProjectsCard key={idx}>
+              <FilterProjectsCardImage src={imageUrl} alt={title} />
+              <p
+                style={{
+                  margin: "0",
+                  marginTop: "10px",
+                  textAlign: "center",
+                  width: "100%",
+                }}
+              >
+                {title}
+              </p>
+              <FilterProjectsOverlay>
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  className="cr-primary-bittersweet"
+                  style={{ fontSize: "36px" }}
+                  onClick={() =>
+                    openModal({ description, stack, link, imageUrl })
+                  }
+                />
+              </FilterProjectsOverlay>
+            </FilterProjectsCard>
+          )
+        )}
+      </FilterProjectsSection>
     </ProjectsWrapper>
   );
 }

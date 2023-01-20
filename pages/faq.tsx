@@ -53,9 +53,9 @@ class Faq extends React.Component<unknown, IFaqState> {
 
   updateSearchedQuestions(searchText: string): void {
     const questions: IFaqQuestion[] = faqQuestions.filter((question: IFaqQuestion) =>
-      Object.keys(question).some((questionProperty: string) =>
+      Object.keys(question as IFaqQuestion).some((questionProperty: string) =>
         {
-          return (question  as any)[questionProperty].toLowerCase().includes(searchText.toLowerCase())
+          return (question as any)[questionProperty].toLowerCase().includes(searchText.toLowerCase())
         }
       )
     );
@@ -75,5 +75,7 @@ class Faq extends React.Component<unknown, IFaqState> {
     );
   }
 }
+
+
 
 export default Faq;

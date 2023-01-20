@@ -3,7 +3,7 @@ import React from "react";
 import { ISeoTableData, SeoPackets, TableDataType } from "./seo-table.data";
 import { PricingButton } from "./seo.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faTimes, faAnchor } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 interface ISeoTableComponent {
   data: ISeoTableData;

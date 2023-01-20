@@ -2,9 +2,10 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
-  experimental: {
-    splitChunks: false,
+  images: {
+    minimumCacheTTL: 60,
   },
+
   async headers() {
     return [
       {
