@@ -21,6 +21,7 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
+import { GlobalModal } from "../components/modal/globalModal.component";
 
 
 
@@ -53,6 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'UA-237114672-1');
         `}
       </Script>
+      <GlobalModal>
       <Component {...pageProps} />
       <CookieConsent
         enableDeclineButton
@@ -87,6 +89,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         closeOnClick
         pauseOnHover
       />
+      </GlobalModal>
+
     </Theme>
   );
 }

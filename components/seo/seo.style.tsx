@@ -19,7 +19,6 @@ export const PricingButton = styled.button`
     }
   }
   a {
-    /* color: #fff; */
     text-decoration: none;
   color: #5839f6;
 
