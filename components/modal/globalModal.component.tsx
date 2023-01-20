@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, createContext, useContext } from "react";
 import ProjectModal from "./project-modal";
