@@ -5,6 +5,7 @@ import { Card } from "react-bootstrap";
 export const ProjectsWrapper = styled.main`
   padding-left: 60px;
   margin-bottom: 60px;
+  min-height: 400px;
 `;
 
 export const ProjectsMainHeader = styled.h1`
