@@ -1,8 +1,9 @@
+import { lighten } from "polished";
 import styled from "styled-components";
 
 export const ContactForm = styled.div`
   width: 80%;
-  background: #fff;
+  background: ${(props) => props.theme.colors.white};
   border-radius: 6px;
   padding: 30px 40px;
   box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.4);
@@ -74,7 +75,7 @@ export const RightSide = styled.div`
 export const TopicText = styled.p`
   font-size: 23px;
   font-weight: 600;
-  color: #3e2093;
+  color: ${(props) => props.theme.colors.bittersweet};
 `;
 export const Form = styled.form`
   display: flex;
@@ -92,7 +93,7 @@ export const InputWrapper = styled.div`
     border: none;
     outline: none;
     font-size: 16px;
-    background: #f0f1f8;
+    background: ${(props) => props.theme.colors.gray};
     border-radius: 6px;
     padding: 0 15px;
     resize: none;
@@ -110,16 +111,16 @@ export const InputWrapper = styled.div`
 export const SubmitButton = styled.button`
   display: inline-block;
   margin-top: 12px;
-  background: #3e2093;
+  background: ${(props) => props.theme.colors.bittersweet};
   border: none;
-  transition: background 0.3s ease;
+  transition: background 0.1s ease;
 
   &:hover {
-    background: #5029bc;
+    background: ${(props) => lighten(0.05, props.theme.colors.bittersweet)};
   }
   input[type="submit"] {
     background-color: transparent;
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
     font-size: 18px;
     outline: none;
     border: none;

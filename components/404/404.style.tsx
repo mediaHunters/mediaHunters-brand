@@ -44,7 +44,7 @@ export const NotfoundBoxDescription = styled.div`
 `;
 
 export const NotFoundBoxdescriptionContainer = styled.div`
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
   text-align: center;
   width: 200px;
   font-size: 16px;
@@ -60,7 +60,7 @@ export const NotFoundBoxdescriptionText = styled.p`
   color: ${(props) => lighten(0.1, props.theme.colors.bittersweet)};
   line-height: 20px;
   margin-top: 20px;
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const NotFoundButton = styled.a`
@@ -90,14 +90,14 @@ export const NotFoundButton = styled.a`
     background: $white;
     bottom: -25px;
     left: 0;
-    border: 2px solid #fff;
+    border: 2px solid ${(props) => props.theme.colors.white};
     transform: translateX(-50px) rotate(45deg);
     transition: transform 0.5s ease;
   }
 
   &:hover {
     background: transparent;
-    border-color: #fff;
+    border-color: ${(props) => props.theme.colors.white};
 
     &:before {
       transform: translateX(250px) rotate(45deg);
@@ -105,7 +105,7 @@ export const NotFoundButton = styled.a`
   }
   &:link,
   &:visited {
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
   }
 `;
 
@@ -127,7 +127,7 @@ export const Symbol = styled.div`
       content: "";
       width: 12px;
       height: 4px;
-      background: #fff;
+      background: ${(props) => props.theme.colors.white};
       position: absolute;
       border-radius: 5px;
       bottom: 65px;
@@ -148,7 +148,7 @@ export const Symbol = styled.div`
     width: 18px;
     border: 4px solid;
     border-radius: 50%;
-    border-color: #fff;
+    border-color: ${(props) => props.theme.colors.white};
     opacity: 0.2;
     animation: ${shine} 4s ease-in-out 1.3s infinite;
   }
@@ -161,7 +161,7 @@ export const Symbol = styled.div`
       content: "";
       width: 12px;
       height: 4px;
-      background: #fff;
+      background: ${(props) => props.theme.colors.white};
       position: absolute;
       border-radius: 5px;
       top: 5px;
@@ -183,7 +183,7 @@ export const Symbol = styled.div`
       content: "";
       width: 15px;
       height: 4px;
-      background: #fff;
+      background: ${(props) => props.theme.colors.white};
       position: absolute;
       border-radius: 5px;
       top: 10px;
@@ -204,7 +204,7 @@ export const Symbol = styled.div`
     width: 12px;
     border: 3px solid;
     border-radius: 50%;
-    border-color: #fff;
+    border-color: ${(props) => props.theme.colors.white};
     opacity: 0.2;
     animation: ${shine} 1.7s ease-in-out 7s infinite;
   }
@@ -217,7 +217,7 @@ export const Symbol = styled.div`
       content: "";
       width: 15px;
       height: 4px;
-      background: #fff;
+      background: ${(props) => props.theme.colors.white};
       position: absolute;
       border-radius: 5px;
       bottom: 65px;
@@ -233,7 +233,7 @@ export const Symbol = styled.div`
 `;
 
 export const BoxGhostContainer = styled.div`
-  background: #fff;
+  background: ${(props) => props.theme.colors.white};
   width: 100px;
   height: 100px;
   border-radius: 100px 100px 0 0;
@@ -284,7 +284,7 @@ export const GhostBottomDot = styled.div`
   top: -10px;
   height: 20px;
   border-radius: 100%;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.white};
 
   &:nth-child(2n) {
     top: -12px;

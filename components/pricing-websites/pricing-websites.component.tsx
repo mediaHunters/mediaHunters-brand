@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Container } from "react-bootstrap";
 import { Footer } from "../footer/footer.style";
 import {
   WebsitesMainHeader,
@@ -16,8 +17,8 @@ import {
 const PricingWebsitesComponent = () => {
   return (
     <>
-      <div className="container">
-        <WebsitesMainHeader className="mb-5">
+      <Container>
+        <WebsitesMainHeader>
           Strony Internetowe Cennik – dla Osób indywidualnych oraz firm
         </WebsitesMainHeader>
         <WebsitesDescription>
@@ -29,9 +30,9 @@ const PricingWebsitesComponent = () => {
           telefonicznie, wspólnie przedyskutujmy kwestię wyboru najlepszej z
           opcji.
         </WebsitesDescription>
-      </div>
-      <div className="container">
-        <WebsitesGrid className="container">
+      </Container>
+      <Container>
+        <WebsitesGrid>
           <div>
             <WebsitesGirdHeader>
               Rozbudowana strona – Multipage
@@ -70,10 +71,10 @@ const PricingWebsitesComponent = () => {
             </picture>
           </WebsitesPackageImageWrapper>
         </WebsitesGrid>
-      </div>
+      </Container>
 
-      <div className="container  mb-5">
-        <WebsitesGrid className="container">
+      <Container>
+        <WebsitesGrid>
           <WebsitesPackageImageWrapper >
             <picture>
               <WebsitePackageImage
@@ -109,10 +110,10 @@ const PricingWebsitesComponent = () => {
             </button>
           </div>
         </WebsitesGrid>
-      </div>
+      </Container>
 
-      <div className="container">
-        <WebsitesGrid className="container">
+      <Container>
+        <WebsitesGrid>
           <div>
             <WebsitesGirdHeader>
               Zaawansowana witryna – Ekspert
@@ -151,7 +152,7 @@ const PricingWebsitesComponent = () => {
             </picture>
           </WebsitesPackageImageWrapper>
         </WebsitesGrid>
-      </div>
+      </Container>
       <Footer />
     </>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
 import {
   FilterButton,
@@ -92,12 +91,6 @@ function ProjectsComponent(): JSX.Element {
     <ProjectsWrapper className="container">
       <ProjectsMainHeader>Projekty</ProjectsMainHeader>
       <ProjectSubHeaderDescription>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-        consequatur magni voluptatibus suscipit eveniet. Sed voluptates velit
-        totam tempore mollitia officia cupiditate rem. Consectetur nobis rerum
-        doloribus est ut vel fugit, at praesentium nihil voluptas. Maxime quia
-        soluta aspernatur reprehenderit quae possimus maiores obcaecati qui
-        aperiam ipsum, vero fugit earum.
       </ProjectSubHeaderDescription>
 
       <FiltersSection>
@@ -132,14 +125,16 @@ function ProjectsComponent(): JSX.Element {
                 {title}
               </p>
               <FilterProjectsOverlay>
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  className="cr-primary-bittersweet"
-                  style={{ fontSize: "36px" }}
-                  onClick={() =>
-                    openModal({ description, stack, link, imageUrl })
-                  }
-                />
+                <div>
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="cr-primary-bittersweet"
+                    style={{ fontSize: "36px" }}
+                    onClick={() =>
+                      openModal({ description, stack, link, imageUrl })
+                    }
+                  />
+                </div>
               </FilterProjectsOverlay>
             </FilterProjectsCard>
           )

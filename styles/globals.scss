@@ -16,6 +16,14 @@ html {
   overflow-y: hidden;
 }
 
+.cr-primary-bittersweet {
+  color: #5839f6;
+}
+
+a {
+  text-decoration: none;
+  color: #5839f6;
+}
 
 
 .btn {
@@ -34,10 +42,14 @@ html {
     a {
       text-decoration: none;
       color: #fff;
+      &:hover {
+        color: #fff;
+      }
     }
 
     &:is(:hover, :focus) {
       background-color: lighten(#5839f6, 5%);
+      color: #fff;
     }
   }
 }
