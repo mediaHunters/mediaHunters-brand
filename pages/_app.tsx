@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import "../styles/globals.scss";
 import "../styles/services.scss";
-import "../styles/cookies.scss";
 
 import Theme from "../styles/Theme";
 import type { AppProps } from "next/app";

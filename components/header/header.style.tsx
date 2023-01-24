@@ -84,11 +84,9 @@ export const NavbarItem = styled.li`
 `;
 
 export const NavbarLink = styled.a`
-  opacity: 1;
   padding: 0 15px;
   color: black;
   font-size: 14px;
-  color: black;
   font-weight: 600;
   cursor: pointer;
   transition: 0.25s ease-in-out;
@@ -105,5 +103,5 @@ export const CrossBox = styled.div<{ visible: boolean; windowWidth: number }>`
   position: absolute;
   top: 33px;
   right: 33px;
-  z-index: ${(props) => props.theme["z-index-100"]};
+  z-index: ${(props) => props.theme.zIndex["z-index-10"]};
 `;

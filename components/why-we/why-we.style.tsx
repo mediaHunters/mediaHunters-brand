@@ -15,12 +15,12 @@ export const AboutUsTop = styled.div`
 
 export const AboutUsSectionTitle = styled.h2`
   margin-bottom: 20px;
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
   font-size: 26px;
 `;
 
 export const AboutUsSectionParagaph = styled.p`
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
   font-size: 15px;
   margin-bottom: 60px;
 `;
@@ -46,7 +46,7 @@ export const AboutUsList = styled.ul`
 `;
 
 export const AboutCard = styled.div`
-  background: #fff;
+  background: ${(props) => props.theme.colors.white};
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
@@ -61,7 +61,7 @@ export const AboutCard = styled.div`
 `;
 
 export const AboutCardIcon = styled.div`
-  color: #5839f6;
+  color: ${(props) => props.theme.colors.bittersweet};
   font-size: 45px;
   width: max-content;
   margin-inline: auto;
@@ -121,7 +121,7 @@ export const TimeLlineList = styled.ul`
 export const TimeLlineElement = styled.li`
   padding: 20px;
   background-color: $bittersweet;
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
   border-radius: 10px;
   margin-bottom: 20px;
 
@@ -134,7 +134,7 @@ export const TimeLlineElement = styled.li`
       position: relative;
       margin-bottom: 50px;
       z-index: 1000;
-      background-color: #5839f6;
+      background-color: ${(props) => props.theme.colors.bittersweet};
     &:nth-child(odd) {
       float: left;
       clear: right;
@@ -155,7 +155,7 @@ export const TimeLlineElement = styled.li`
       height: 20px;
       width: 20px;
       border-radius: 50%;
-      background-color: #fff;
+      background-color: ${(props) => props.theme.colors.white};
       top: 0px;
     }
 
@@ -170,7 +170,7 @@ export const TimeLlineElement = styled.li`
     }
 
     &:hover::after {
-      background-color: #5839f6;
+      background-color: ${(props) => props.theme.colors.bittersweet};
     }
   }
 `;

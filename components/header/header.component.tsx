@@ -15,6 +15,7 @@ import DropdownComponent from "../dropdown/dropdown.component";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { v4 as uuidv4 } from "uuid";
 import { ImCross } from "react-icons/im";
+import { BasicLink } from "../shared/shared.style";
 
 interface headerProps {
   links: Array<LinkText | LinkDropdown>;
@@ -95,7 +96,7 @@ export class headerComponent extends React.Component<headerProps, headerState> {
     return (
       <MainHeaderWrapper scrollY={this.state.scrollY}>
         <Container className="container">
-          <Link href="/" className="logo">
+          <BasicLink href="/" className="logo">
             <a>
             <Image
               alt="tworzenie-i-projektowanie-stron"
@@ -105,7 +106,7 @@ export class headerComponent extends React.Component<headerProps, headerState> {
               priority={true}
             />
             </a>
-          </Link>
+          </BasicLink>
           <Navbar>
             <NavbarList activeMenu={this.state.activeMenu}>
               {(this.links as LinkText[]).map(

@@ -4,6 +4,8 @@ import { ThemeProvider } from "styled-components";
 const theme = {
   colors: {
     white: "#FFF",
+    gray: "#f0f1f8",
+    black: "#000",
     bittersweet: "#5839f6"
   },
   zIndex: {
@@ -19,7 +21,7 @@ const theme = {
   }
 };
 
-const Theme = ({ children }) => (
+const Theme = ({ children }: {children: React.ReactNode}) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
 

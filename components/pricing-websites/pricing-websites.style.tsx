@@ -4,7 +4,7 @@ import { lighten } from "polished";
 
 export const WebsitesMainHeader = styled.h1`
   text-align: center;
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
   font-size: 40px;
   margin-bottom: 15px;
 `;
@@ -14,7 +14,7 @@ export const WebsitesDescription = styled.p`
   font-size: 18px;
   font-weight: 300;
   line-height: 1.4;
-  color: ${() => lighten(0.2, '#000')};
+  color: ${(props) => lighten(0.2, props.theme.colors.black)};
   margin-bottom: 120px;
 `;
 
@@ -33,7 +33,7 @@ export const WebsitesGrid = styled.div`
 
 export const WebsitesGirdHeader = styled.h2`
   font-size: 40px;
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
   margin-bottom: 30px;
 `;
 
@@ -41,7 +41,7 @@ export const WebsitesGridHeaderText = styled.p`
   font-size: 18px;
   font-weight: 300;
   line-height: 1.4;
-  color: ${() => lighten(0.2, '#000')};
+  color: ${(props) => lighten(0.2, props.theme.colors.black)};
   margin-bottom: 30px;
 `;
 
@@ -49,7 +49,7 @@ export const WebsitesGridQuestion = styled.p`
   font-size: 18px;
   font-weight: 500;
   line-height: 1.5rem;
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
 `;
 export const WebsitesGridAnswer = styled(WebsitesGridQuestion)`
   display: flex;
@@ -58,7 +58,7 @@ export const WebsitesGridAnswer = styled(WebsitesGridQuestion)`
 `;
 
 export const WebsitesGridPrice = styled.span`
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
   font-weight: 500;
   font-size: 16px;
   margin: 0 3px;
@@ -71,6 +71,6 @@ export const WebsitePackageImage = styled(Image)`
 `;
 
 export const WebsitesPackageImageWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-`
+  display: flex;
+  justify-content: center;
+`;

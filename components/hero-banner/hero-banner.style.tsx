@@ -32,7 +32,7 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroContentTitle = styled.h1`
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
   font-weight: bold;
   margin-bottom: 40px;
   font-size: 36px;

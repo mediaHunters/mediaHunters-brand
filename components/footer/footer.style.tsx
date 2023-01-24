@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  background: #f0f1f8;
+  background: ${(props) => props.theme.colors.gray};
 `;
 
 export const FooterTop = styled.div`
@@ -58,12 +58,12 @@ export const FooterLinkList = styled.ul`
 `;
 
 export const FooterLinkTitle = styled.h3`
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
   font-size: 15px;
   font-weight: 600;
 `;
 export const FooterLink = styled.a`
-  color: #5839f6;
+  color: ${(props) => props.theme.colors.black};
   font-size: 14px;
   margin-bottom: 10px;
   max-width: 150px;
@@ -76,7 +76,7 @@ export const FooterLink = styled.a`
 
 export const Topic = styled.li`
   font-weight: 500;
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
   font-size: 15px;
   font-weight: 600;
 `;

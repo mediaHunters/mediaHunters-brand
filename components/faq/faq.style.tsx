@@ -19,7 +19,7 @@ export const FaqQuestionsContainerHeader = styled.h1`
   align-items: center;
   font-size: 40px;
   font-weight: 500;
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
 `;
 
 export const FaqQuestionsContainerSubHeader = styled.p`
@@ -66,7 +66,7 @@ export const QuestionCard = styled.div`
   max-width: 370px;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.white};
   min-height: 350px;
   height: 100%;
   width: 100%;
