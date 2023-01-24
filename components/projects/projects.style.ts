@@ -33,6 +33,10 @@ export const FiltersSection = styled.div`
   justify-content: flex-start;
   margin-top: 40px;
   flex-wrap: wrap;
+  @media (max-width: 548px) {
+
+  justify-content: center;
+  }
 `;
 
 export const FilterButton = styled.button<{ active: boolean }>`
