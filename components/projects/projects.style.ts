@@ -72,9 +72,9 @@ export const FilterProjectsCard = styled(Card)`
   padding: 10px;
   align-items: flex-start;
   border: none;
-  transition: box-shadow 0.5s ease;
+  transition: all 0.5s ease;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  transition: box-shadow 0.5s ease;
+  transition: all 0.5s ease;
   &:hover {
     box-shadow: none;
   }

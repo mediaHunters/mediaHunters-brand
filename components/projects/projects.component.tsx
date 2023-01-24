@@ -94,7 +94,7 @@ function ProjectsComponent(): JSX.Element {
       </ProjectSubHeaderDescription>
 
       <FiltersSection>
-        Filters:
+        Filtry:
         {filters.filters.map((filter, idx: number) => (
           <FilterButton
             active={filter.active}
