@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useCallback, useEffect } from "react";
 import ProjectModal from "./project-modal";
 
 export const MODAL_TYPES = {
@@ -32,6 +32,13 @@ export const GlobalModal: React.FC<{ children: React.ReactNode }> = ({
   const [store, setStore] = useState({});
   const { modalType, modalProps } = store as any || {};
 
+  const escListener = useCallback((event: KeyboardEvent) => {
+
+    if (event.key === "Escape") {
+      hideModal()
+    }
+  }, []);
+
   const showModal = (modalType: string, modalProps: unknown = {}) => {
     setStore({
       ...store,
@@ -57,6 +64,14 @@ export const GlobalModal: React.FC<{ children: React.ReactNode }> = ({
     }
     return <ModalComponent id="global-modal" {...modalProps} />;
   };
+
+  useEffect(() => {
+    document.addEventListener("keydown", escListener, false);
+
+    return () => {
+      document.removeEventListener("keydown", escListener, false);
+    };
+  }, [escListener]);
 
   return (
     <GlobalModalContext.Provider value={{ store, showModal, hideModal }}>
