@@ -29,6 +29,11 @@ export const PricingWebsites: NextPage = () => {
       ],
     },
     {
+      text: "Projekty",
+      url: "/projekty",
+      type: "link",
+    },
+    {
       text: "FAQ",
       url: "/faq",
       type: "link",

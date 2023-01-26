@@ -99,6 +99,7 @@ export const NavbarLink = styled.a`
 export const CrossBox = styled.div<{ visible: boolean; windowWidth: number }>`
   display: ${({ visible, windowWidth }) =>
     visible && windowWidth < 1024 ? "block" : "none"};
+    font-size: 24px;
   transition: 0.75s ease-in-out;
   position: absolute;
   top: 33px;

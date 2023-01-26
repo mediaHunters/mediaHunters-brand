@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { lighten } from "polished";
 import { Card } from "react-bootstrap";
 
@@ -69,6 +69,12 @@ export const FilterButton = styled.button<{ active: boolean }>`
 export const FilterProjectsSection = styled.div`
   margin-top: 40px;
 `;
+
+export const showUp = keyframes`
+0% { opacity: 0 }
+  100% { opacity: 1; } 
+`
+
 export const FilterProjectsCard = styled(Card)`
   max-width: 500px;
   width: 100%;
@@ -79,6 +85,7 @@ export const FilterProjectsCard = styled(Card)`
   transition: all 0.5s ease;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   transition: all 0.5s ease;
+  animation-name: ${showUp} 1.4s;
   &:hover {
     box-shadow: none;
   }

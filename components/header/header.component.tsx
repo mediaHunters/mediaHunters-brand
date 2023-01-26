@@ -149,11 +149,12 @@ export class headerComponent extends React.Component<headerProps, headerState> {
               windowWidth={Number(this.state.width)}
               onClick={() => this.setState({ activeMenu: false })}
             >
-              <ImCross />
+              <ImCross size={30}/>
             </CrossBox>
           </Navbar>
           {this.state.width && this.state.width < 1024 ? (
             <GiHamburgerMenu
+            size={30}
               onClick={() =>
                 this.setState({ activeMenu: !this.state.activeMenu })
               }

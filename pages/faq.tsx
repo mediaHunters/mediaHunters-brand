@@ -37,6 +37,11 @@ class Faq extends React.Component<unknown, IFaqState> {
       ],
     },
     {
+      text: "Projekty",
+      url: "/projekty",
+      type: "link",
+    },
+    {
       text: "FAQ",
       url: "/faq",
       type: "link",
