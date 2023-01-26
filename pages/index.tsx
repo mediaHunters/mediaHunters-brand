@@ -37,6 +37,11 @@ const HomePage: NextPage = () => {
       type: "link",
     },
     {
+      text: "Projekty",
+      url: "/projekty",
+      type: "link",
+    },
+    {
       text: "Usługi",
       url: "#uslugi",
       type: "link",

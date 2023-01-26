@@ -110,9 +110,8 @@ function ProjectsComponent(): JSX.Element {
         {filteredProjects.map(
           (
             { title, imageUrl, description, stack, link }: IProjects,
-            idx: number
           ) => (
-            <FilterProjectsCard key={idx}>
+            <FilterProjectsCard key={Math.random()}>
               <FilterProjectsCardImage src={imageUrl} alt={title} />
               <p
                 style={{

@@ -13,11 +13,6 @@ function Projects() {
           type: "link",
         },
         {
-            text: "Projekty",
-            url: "/projekty",
-            type: "link",
-          },
-        {
           text: "Cennik",
           type: "dropdown",
           links: [
@@ -30,6 +25,11 @@ function Projects() {
               url: "/pozycjonowanie",
             },
           ],
+        },
+        {
+          text: "Projekty",
+          url: "/projekty",
+          type: "link",
         },
         {
           text: "FAQ",
