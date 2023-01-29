@@ -54,7 +54,7 @@ const PricingWebsitesComponent = () => {
               ją często jako rozbudowane portfolio.
             </WebsitesGridHeaderText>
             <WebsitesGridAnswer>
-              Od <WebsitesGridPrice>2000,00</WebsitesGridPrice> zł brutto
+              Od <WebsitesGridPrice>1000,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
               <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
@@ -103,7 +103,7 @@ const PricingWebsitesComponent = () => {
               Dowolna ilość tekstu oraz multimediów stanowiąca spójną całość.
             </WebsitesGridHeaderText>
             <WebsitesGridAnswer>
-              Od <WebsitesGridPrice>900,00</WebsitesGridPrice> zł brutto
+              Od <WebsitesGridPrice>250,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
               <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
@@ -135,7 +135,7 @@ const PricingWebsitesComponent = () => {
               stabilności oferujemy także usługę serwisową.
             </WebsitesGridHeaderText>
             <WebsitesGridAnswer>
-              Od <WebsitesGridPrice>2490,00</WebsitesGridPrice> zł brutto
+              Od <WebsitesGridPrice>1500,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
               <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
