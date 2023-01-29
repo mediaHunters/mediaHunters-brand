@@ -76,6 +76,7 @@ export const showUp = keyframes`
 `
 
 export const FilterProjectsCard = styled(Card)`
+margin: 0 40px;
   max-width: 500px;
   width: 100%;
   position: relative;

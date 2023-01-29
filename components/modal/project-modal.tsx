@@ -48,7 +48,7 @@ const ProjectModal: React.FC<IProjects> = ({
       </ModalBody>
 
       <Modal.Footer>
-        <p style={{marginRight: "auto"}}>link do strony -&gt;  <a href={link} rel="noreferrer" target="_blank" style={{color: '#5839f6'}}>{link}</a> </p>
+        <p style={{marginRight: "auto"}}>Link do strony -&gt;  <a href={link} rel="noreferrer" target="_blank" style={{color: '#5839f6'}}>{link}</a> </p>
         <ModalButton className="btn btn-block p-2 shadow rounded-pill" onClick={hideModal} >Zamknij</ModalButton>
       </Modal.Footer>
     </Modal>

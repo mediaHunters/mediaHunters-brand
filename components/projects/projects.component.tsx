@@ -91,7 +91,6 @@ function ProjectsComponent(): JSX.Element {
     <ProjectsWrapper className="container">
       <ProjectsMainHeader>Projekty</ProjectsMainHeader>
       <ProjectSubHeaderDescription></ProjectSubHeaderDescription>
-
       <FiltersSection>
         Filtry:
         {filters.filters.map((filter, idx: number) => (
@@ -107,8 +106,11 @@ function ProjectsComponent(): JSX.Element {
 
       <FilterProjectsSection className="container card-group">
         {filteredProjects.map(
-          ({ title, imageUrl, description, stack, link }: IProjects) => (
-            <FilterProjectsCard key={Math.random()}>
+          (
+            { title, imageUrl, description, stack, link }: IProjects,
+            idx: number
+          ) => (
+            <FilterProjectsCard key={idx}>
               <FilterProjectsCardImage src={imageUrl} alt={title} />
               <p
                 style={{
