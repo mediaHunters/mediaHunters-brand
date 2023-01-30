@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { LinkText, LinkDropdown } from "../interfaces/link.interface";
 import { faqQuestions, IFaqQuestion } from "../components/faq/faq.questions";
+import Head from "next/head";
 
 const FaqComponent = dynamic(() => import("../components/faq/faq.component"));
 const FooterComponent = dynamic(
@@ -12,7 +13,7 @@ const HeaderComponent = dynamic(
 );
 
 export interface IFaqState {
-  questions: IFaqQuestion[]
+  questions: IFaqQuestion[];
 }
 
 class Faq extends React.Component<unknown, IFaqState> {
@@ -57,12 +58,15 @@ class Faq extends React.Component<unknown, IFaqState> {
   }
 
   updateSearchedQuestions(searchText: string): void {
-    const questions: IFaqQuestion[] = faqQuestions.filter((question: IFaqQuestion) =>
-      Object.keys(question as IFaqQuestion).some((questionProperty: string) =>
-        {
-          return (question as any)[questionProperty].toLowerCase().includes(searchText.toLowerCase())
-        }
-      )
+    const questions: IFaqQuestion[] = faqQuestions.filter(
+      (question: IFaqQuestion) =>
+        Object.keys(question as IFaqQuestion).some(
+          (questionProperty: string) => {
+            return (question as any)[questionProperty]
+              .toLowerCase()
+              .includes(searchText.toLowerCase());
+          }
+        )
     );
     this.setState({ questions });
   }
@@ -70,6 +74,17 @@ class Faq extends React.Component<unknown, IFaqState> {
   render() {
     return (
       <>
+        <Head>
+          <title>Tworzenie stron internetowych Wrocław - FAQ</title>
+          <meta
+            name="title"
+            content="Tworzenie stron internetowych Wrocław - FAQ"
+          />
+          <meta
+            name="description"
+            content="Czy warto stworzyć firmową stronę WWW? Znajdź odpowiedz w naszej części FAQ"
+          />
+        </Head>
         <HeaderComponent links={this.links} />
         <FaqComponent
           questions={this.state.questions}
@@ -80,7 +95,5 @@ class Faq extends React.Component<unknown, IFaqState> {
     );
   }
 }
-
-
 
 export default Faq;

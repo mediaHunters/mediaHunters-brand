@@ -43,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=UA-237114672-1"
         strategy="afterInteractive"
+        
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`

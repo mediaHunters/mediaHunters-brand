@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
 import { NextPage } from "next";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import { LinkDropdown, LinkText } from "../interfaces/link.interface";
-import FooterComponent from '../components/footer/footer.component';
+import FooterComponent from "../components/footer/footer.component";
+import Head from "next/head";
 
-const HeaderComponent  = dynamic(() => import("../components/header/header.component"));
-const PricingWebsitesComponent = dynamic(() => import("../components/pricing-websites/pricing-websites.component"));
+const HeaderComponent = dynamic(
+  () => import("../components/header/header.component")
+);
+const PricingWebsitesComponent = dynamic(
+  () => import("../components/pricing-websites/pricing-websites.component")
+);
 
 export const PricingWebsites: NextPage = () => {
   const links: Array<LinkText | LinkDropdown> = [
@@ -42,6 +47,15 @@ export const PricingWebsites: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Strony internetowe Wrocław – Cennik</title>
+        <meta name="title" content="Strony internetowe Wrocław – Cennik" />
+        <meta
+          name="description"
+          content="Sprawdź nasz cennik stron internetowych we Wrocławiu. Nie jesteśmy dużą agencją, za
+          to mamy atrakcyjne stawki!"
+        />
+      </Head>
       <HeaderComponent links={links} />
       <PricingWebsitesComponent />
       <FooterComponent />
@@ -49,5 +63,4 @@ export const PricingWebsites: NextPage = () => {
   );
 };
 
-
-export default PricingWebsites
+export default PricingWebsites;
