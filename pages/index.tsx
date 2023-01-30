@@ -1,22 +1,20 @@
 import type { NextPage } from "next";
 import React from "react";
 
+import Head from "next/head";
 import dynamic from "next/dynamic";
 import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
 import HeaderComponent from "../components/header/header.component";
 import HeroBannerComponent from "../components/hero-banner/hero-banner.component";
-import ServicesComponent from "../components/services/services.component";
 
-
-import Head from "next/head";
-
-const WhyWe = dynamic(() => import("../components/why-we/why-we.conponent"));
+const ServicesComponent = dynamic(() => import("../components/services/services.component").then(mod => mod.default))
+const WhyWe = dynamic(() => import("../components/why-we/why-we.conponent").then((mod) => mod.default));
 const ContactFormComponent = dynamic(
-  () => import("../components/contact/contact.component")
+  () => import("../components/contact/contact.component").then((mod) => mod.default)
 );
 const FooterComponent = dynamic(
-  () => import("../components/footer/footer.component")
+  () => import("../components/footer/footer.component").then((mod) => mod.default)
 );
 
 const HomePage: NextPage = () => {
