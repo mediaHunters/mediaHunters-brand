@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import { LinkText, LinkDropdown } from "../interfaces/link.interface";
 
 import dynamic from "next/dynamic";
+import Head from "next/head";
 const HeaderComponent = dynamic(
   () => import("../components/header/header.component")
 );
@@ -47,6 +48,19 @@ const SEO: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Pozycjonowanie stron internetowych Wrocław</title>
+        <meta
+          name="title"
+          content="Pozycjonowanie stron internetowych Wrocław"
+        />
+        <meta
+          name="description"
+          content="Przenieś swoją firmę ponad konkurencję w Google. Pozycjonujemy strony, prowadzimy
+            kampanie oraz SEO lokalne
+            "
+        />
+      </Head>
       <HeaderComponent links={links} />
       <SEOComponent />
       <FooterComponent />

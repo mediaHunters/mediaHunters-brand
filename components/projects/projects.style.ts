@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { lighten } from "polished";
-import { Card } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
 
 export const ProjectsWrapper = styled.main`
   margin-bottom: 60px;
