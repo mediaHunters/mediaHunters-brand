@@ -25,7 +25,7 @@ interface IFaqState {
 }
 
 class FaqComponent extends React.Component<IFaqProps, IFaqState> {
-  // TODO find way to reset array when click backspace and strinp is empty
+  // TODO find way to reset array when click backspace and string is empty
   constructor(props: IFaqProps) {
     super(props);
     this.state = {
@@ -59,8 +59,8 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
             <Image
               src="/images/waving-hand.png"
               alt="waving hand"
-              width="40px"
-              height="40px"
+              width="40"
+              height="40"
               priority={true}
             />
             <FaqQuestionsContainerSubHeader>FAQ’S - Najczęściej zadawane pytania</FaqQuestionsContainerSubHeader>

@@ -8,10 +8,16 @@ export const FaqQuestionsContainer = styled.main`
   max-width: 1340px;
   width: 100%;
   margin: 0 auto 50px auto;
+  @media(max-width: 850px) {
+    padding: 0 20px;
+  }
 `;
 
 export const FaqQuestionsHeaderWrapper = styled.div`
-  padding-left: 20px;
+  @media(min-width: 850px) {
+    padding-left: 20px;
+
+  }
 `
 
 export const FaqQuestionsContainerHeader = styled.h1`
@@ -24,6 +30,9 @@ export const FaqQuestionsContainerHeader = styled.h1`
 
 export const FaqQuestionsContainerSubHeader = styled.p`
   margin-left: 20px;
+  @media(max-width: 850px) {
+    font-size: 14px;
+  }
 `
 
 export const FaqQuestionsContainerDescription = styled.p`

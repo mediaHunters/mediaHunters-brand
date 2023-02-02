@@ -107,7 +107,7 @@ const SeoTableComponent = (props: ISeoTableComponent) => {
         <div className="mb-5"></div>
         <PricingButton className="btn btn-block p-2 shadow rounded-pill">
           <Link href="/#contact">
-            <a>Skontaktuj się!</a>
+            Skontaktuj się!
           </Link>
         </PricingButton>
       </div>

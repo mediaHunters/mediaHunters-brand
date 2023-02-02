@@ -7,6 +7,9 @@ export const WebsitesMainHeader = styled.h1`
   color: ${(props) => props.theme.colors.black};
   font-size: 40px;
   margin-bottom: 15px;
+  @media(max-width: 850px) {
+    font-size: 14px;
+  }
 `;
 
 export const WebsitesDescription = styled.p`
@@ -16,6 +19,9 @@ export const WebsitesDescription = styled.p`
   line-height: 1.4;
   color: ${(props) => lighten(0.2, props.theme.colors.black)};
   margin-bottom: 120px;
+  @media(max-width: 850px) {
+    font-size: 12px;
+  }
 `;
 
 export const WebsitesGrid = styled.div`
@@ -68,9 +74,13 @@ export const WebsitePackageImage = styled(Image)`
   width: 100%;
   max-width: 600px;
   height: auto;
+
 `;
 
 export const WebsitesPackageImageWrapper = styled.div`
   display: flex;
   justify-content: center;
+  @media(max-width: 850px) {
+      order: 1
+  }
 `;

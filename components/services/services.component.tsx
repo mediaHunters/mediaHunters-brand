@@ -10,8 +10,8 @@ const ServicesComponent = () => {
           <Image
             src="/images/cennik-strony-WWW.png"
             alt="responsywne-strony-www"
-            width="400px"
-            height="500px"
+            width="400"
+            height="500"
             priority={true}
           />
         </figure>

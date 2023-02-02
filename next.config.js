@@ -1,4 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
+require('@next/bundle-analyzer')
+const withBundleAnalyzer  = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
+
+  
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
@@ -22,4 +29,12 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer({
+  env: {
+      NEXT_PUBLIC_ENV: 'PRODUCTION', //your next configs goes here
+  },
+  ...nextConfig
+})
+
+
+
