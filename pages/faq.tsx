@@ -3,11 +3,11 @@ import dynamic from "next/dynamic";
 import { LinkText, LinkDropdown } from "../interfaces/link.interface";
 import { faqQuestions, IFaqQuestion } from "../components/faq/faq.questions";
 import Head from "next/head";
+import FooterComponent from "../components/footer/footer.component";
 
 const FaqComponent = dynamic(() => import("../components/faq/faq.component"));
-const FooterComponent = dynamic(
-  () => import("../components/footer/footer.component")
-);
+
+
 const HeaderComponent = dynamic(
   () => import("../components/header/header.component")
 );

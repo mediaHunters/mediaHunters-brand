@@ -25,7 +25,7 @@ interface IFaqState {
 }
 
 class FaqComponent extends React.Component<IFaqProps, IFaqState> {
-  // TODO find way to reset array when click backspace and strinp is empty
+  // TODO find way to reset array when click backspace and string is empty
   constructor(props: IFaqProps) {
     super(props);
     this.state = {

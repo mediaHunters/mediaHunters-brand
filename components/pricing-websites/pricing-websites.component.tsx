@@ -57,7 +57,7 @@ const PricingWebsitesComponent = () => {
               Od <WebsitesGridPrice>1000,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
-              <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
+              <Link href="/#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
             </button>
           </div>
           <WebsitesPackageImageWrapper>
@@ -106,7 +106,7 @@ const PricingWebsitesComponent = () => {
               Od <WebsitesGridPrice>250,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
-              <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
+              <Link href="/#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
             </button>
           </div>
         </WebsitesGrid>
@@ -138,7 +138,7 @@ const PricingWebsitesComponent = () => {
               Od <WebsitesGridPrice>1500,00</WebsitesGridPrice> zł brutto
             </WebsitesGridAnswer>
             <button className="btn btn--primary">
-              <Link href="/index.html#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
+              <Link href="/#kontakt">ZAMÓW DARMOWĄ WYCENĘ</Link>
             </button>
           </div>
           <WebsitesPackageImageWrapper>

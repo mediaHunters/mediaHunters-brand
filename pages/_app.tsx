@@ -22,10 +22,6 @@ import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { GlobalModal } from "../components/modal/globalModal.component";
 
-
-
-
-
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     Router.events.on("routeChangeStart", () => NProgress.start());
