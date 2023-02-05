@@ -1,6 +1,6 @@
 import Link from "next/link";
-import styled from "styled-components";
 import { lighten } from "polished";
+import styled from "styled-components";
 
 export const Button = styled.button<{ buttonType?: string }>`
   font-size: 14px;

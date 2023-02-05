@@ -1,9 +1,11 @@
 import Head from "next/head";
+
 import React from "react";
+
 import FooterComponent from "../components/footer/footer.component";
 import HeaderComponent from "../components/header/header.component";
 import ProjectsComponent from "../components/projects/projects.component";
-import { LinkText, LinkDropdown } from "../interfaces/link.interface";
+import { LinkDropdown,LinkText } from "../interfaces/link.interface";
 
 function Projects() {
   const links: Array<LinkText | LinkDropdown> = [

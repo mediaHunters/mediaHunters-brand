@@ -1,5 +1,9 @@
 {
-  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "simple-import-sort",
+    "import"
+  ],
   "extends": [
     "eslint:recommended",
     "next/core-web-vitals",
@@ -8,6 +12,35 @@
     "prettier"
   ],
   "rules": {
-    "react-hooks/exhaustive-deps": "off"
-  }
+    "react-hooks/exhaustive-deps": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error"
+  },
+
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              ["^next", "^@?\\w"],
+              ["^react", "^@?\\w"],
+              ["^(@|components)(/.*|$)"],
+              ["^\\u0000"],
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "exclude": ["public", "node_modules"]
 }

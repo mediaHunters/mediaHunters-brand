@@ -1,6 +1,6 @@
 import Image from "next/image";
-import styled from "styled-components";
 import { lighten } from "polished";
+import styled from "styled-components";
 
 export const WebsitesMainHeader = styled.h1`
   text-align: center;

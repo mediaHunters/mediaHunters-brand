@@ -1,16 +1,19 @@
 import Link from "next/link";
+
 import Container from "react-bootstrap/Container";
+
 import { Footer } from "../footer/footer.style";
+
 import {
-  WebsitesMainHeader,
-  WebsitesDescription,
-  WebsitesGrid,
-  WebsitesGridHeaderText,
-  WebsitesGridQuestion,
   WebsitePackageImage,
+  WebsitesDescription,
   WebsitesGirdHeader,
+  WebsitesGrid,
   WebsitesGridAnswer,
+  WebsitesGridHeaderText,
   WebsitesGridPrice,
+  WebsitesGridQuestion,
+  WebsitesMainHeader,
   WebsitesPackageImageWrapper,
 } from "./pricing-websites.style";
 

@@ -1,4 +1,8 @@
 import Image from "next/image";
+
+import { AiOutlinePhone } from "react-icons/ai";
+import { BsEnvelope } from "react-icons/bs";
+
 import {
   Footer,
   FooterBrand,
@@ -10,8 +14,7 @@ import {
   FooterTop,
   Topic,
 } from "./footer.style";
-import { BsEnvelope } from "react-icons/bs";
-import { AiOutlinePhone } from "react-icons/ai";
+
 const FooterComponent = () => {
   return (
     <Footer>
@@ -25,6 +28,7 @@ const FooterComponent = () => {
                 width="125"
                 height="125"
                 priority={true}
+                loader={({ src }: { src: string }) => src}
               />
             </FooterLink>
           </FooterBrand>

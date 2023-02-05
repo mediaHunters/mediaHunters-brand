@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
 import { lighten } from "polished";
+import styled, { keyframes } from "styled-components";
+
 import Card from "react-bootstrap/Card";
 
 export const ProjectsWrapper = styled.main`

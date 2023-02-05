@@ -1,4 +1,7 @@
+import Image from "next/image";
+
 import React from "react";
+
 import { IFaqQuestion } from "./faq.questions";
 import {
   FaqQuestionsContainer,
@@ -13,7 +16,7 @@ import {
   QuestionHeader,
   SearchIcon,
 } from "./faq.style";
-import Image from "next/image";
+
 interface IFaqProps {
   questions: IFaqQuestion[];
   updateSearchedQuestions: (searchText: string) => void;

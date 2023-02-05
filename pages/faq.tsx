@@ -1,9 +1,11 @@
-import React from "react";
 import dynamic from "next/dynamic";
-import { LinkText, LinkDropdown } from "../interfaces/link.interface";
-import { faqQuestions, IFaqQuestion } from "../components/faq/faq.questions";
 import Head from "next/head";
+
+import React from "react";
+
+import { faqQuestions, IFaqQuestion } from "../components/faq/faq.questions";
 import FooterComponent from "../components/footer/footer.component";
+import { LinkDropdown,LinkText } from "../interfaces/link.interface";
 
 const FaqComponent = dynamic(() => import("../components/faq/faq.component"));
 

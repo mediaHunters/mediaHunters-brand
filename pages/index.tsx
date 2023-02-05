@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
-import React from "react";
-
-import Head from "next/head";
 import dynamic from "next/dynamic";
-import { LinkDropdown, LinkText } from "../interfaces/link.interface";
+import Head from "next/head";
+
+import React from "react";
 
 import HeaderComponent from "../components/header/header.component";
 import HeroBannerComponent from "../components/hero-banner/hero-banner.component";
+import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
 const ServicesComponent = dynamic(() => import("../components/services/services.component").then(mod => mod.default))
 const WhyWe = dynamic(() => import("../components/why-we/why-we.conponent").then((mod) => mod.default));

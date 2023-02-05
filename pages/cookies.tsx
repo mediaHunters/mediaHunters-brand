@@ -1,7 +1,9 @@
-import React from "react";
 import { NextPage } from "next";
-import { LinkText, LinkDropdown } from "../interfaces/link.interface";
 import dynamic from "next/dynamic";
+
+import React from "react";
+
+import { LinkDropdown,LinkText } from "../interfaces/link.interface";
 
 const CookiesComponent = dynamic(() => import("../components/cookies/cookies.component"));
 const HeaderComponent = dynamic(() => import("../components/header/header.component"));

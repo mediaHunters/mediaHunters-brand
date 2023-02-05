@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
 import { lighten } from "polished";
+import styled, { keyframes } from "styled-components";
 
 const upndown = keyframes`
     0% {transform: translateY(5px);}

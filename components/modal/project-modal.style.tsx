@@ -1,5 +1,6 @@
-import Modal from "react-bootstrap/Modal";
 import styled from "styled-components";
+
+import Modal from "react-bootstrap/Modal";
 
 export const ModalBody = styled(Modal.Body)`
   display: flex;

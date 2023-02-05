@@ -1,9 +1,11 @@
-import React from "react";
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { LinkDropdown, LinkText } from "../interfaces/link.interface";
-import FooterComponent from "../components/footer/footer.component";
 import Head from "next/head";
+
+import React from "react";
+
+import FooterComponent from "../components/footer/footer.component";
+import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
 const HeaderComponent = dynamic(
   () => import("../components/header/header.component")

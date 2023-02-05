@@ -13,7 +13,7 @@ function verifyUser(captcha: string, res: NextApiResponse) {
       return body.success;
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
     });
 }
 

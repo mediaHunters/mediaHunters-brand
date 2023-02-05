@@ -1,4 +1,9 @@
 import React, { ChangeEvent } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from "react-toastify";
+
+import GoogleMapContainer from "../google-map/google-map.component";
+
 import {
   ContactForm,
   Content,
@@ -9,9 +14,6 @@ import {
   SubmitButton,
   TopicText,
 } from "./contact.style";
-import GoogleMapContainer from "../google-map/google-map.component";
-import ReCAPTCHA from "react-google-recaptcha";
-import { toast } from "react-toastify";
 
 interface IContactFormState {
   [input: string]: string;
@@ -74,7 +76,7 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
         toast.success("Twoja wiadomość została pomyślnie wysłana!");
       })
       .catch((err): void => {
-        console.log(err)
+        console.error(err)
         toast.error("Wystąpił problem, spróbuj ponownie na chwile");
       });
   }
