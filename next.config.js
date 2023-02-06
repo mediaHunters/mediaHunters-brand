@@ -24,12 +24,16 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   reactStrictMode: false,
   swcMinify: false,
+  styledComponents: true,
   images: {
     minimumCacheTTL: 60,
     domains: ["images.unsplash.com", "picsum.photos"],
     loader: "custom",
     unoptimized: true,
   },
+  experimental: {
+    styledComponents: true
+},
 
   onDemandEntries: {
     maxInactiveAge: SECONDS_PER_DAY * MS_PER_SECOND,

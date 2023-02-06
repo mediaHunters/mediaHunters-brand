@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import {
   BlogContainer,
@@ -8,8 +9,9 @@ import {
   BlogText,
 } from "@components/blog/blog.styles";
 import DateFormatter from "@components/blog/utils/DateFormatter";
-import TagsComponent from "@components/blog/utils/tags";
 import BlogPost from "@lib/blog/blog-post";
+
+const TagsComponent  = dynamic(() => import("@components/blog/utils/tags"), {ssr: false})
 
 export const BlogComponent = ({ posts }: { posts: BlogPost[] }) => {
   return (
@@ -31,7 +33,7 @@ export const BlogComponent = ({ posts }: { posts: BlogPost[] }) => {
           <Link href={`${post.collection.slug}/${post.slug}`}>Czytaj więcej →</Link>
         </BlogPostPreview>
       ))}
-          <Link href={"/"} style={{alignSelf: 'end', marginTop: '10px'}}>Wszystkie artykuły →</Link>
+          {/* <Link href={"/"} style={{alignSelf: 'end', marginTop: '10px'}}>Wszystkie artykuły →</Link> */}
 
     </BlogContainer>
   );

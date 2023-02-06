@@ -59,12 +59,7 @@ const PostPage = ({ post, morePosts, content }: Props) => {
 
         <Post content={content} post={post} />
 
-        <div className={"max-w-2xl mx-auto flex flex-col space-y-8 pb-32"}>
-          <div>
-            <h4 className={"text-xl font-medium flex justify-center"}>
-              Learn more about {post.collection.name}
-            </h4>
-          </div>
+        <div className={"max-w-2xl mx-auto flex flex-col space-y-8 pb-32 mt-5"}>
 
           <div>
             <PostsList posts={morePosts} />

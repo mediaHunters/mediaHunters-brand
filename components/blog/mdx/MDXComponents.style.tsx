@@ -100,3 +100,16 @@ export const Paragraph = styled.p`
     font-size: 1.5rem;
   }
 `;
+
+
+export const ListItem = styled.li`
+  list-style-type: decimal;
+  margin: 1em 0;
+  padding: 0 1em;
+
+@media only screen and (max-width: 480px) {
+    font-size: 0.8em;
+}
+
+  margin: 0.5em 0;
+`

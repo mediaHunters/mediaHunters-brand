@@ -2,6 +2,7 @@ import Image from "next/image";
 import {
   Blockquote,
   Code,
+  ListItem,
   MDXh1,
   MDXh2,
   MDXh3,
@@ -92,6 +93,7 @@ const MDXComponents = {
   Image: NextImage,
   title: InlineCode,
   p: Paragraph,
+  li: ListItem
 };
 
 export default MDXComponents;

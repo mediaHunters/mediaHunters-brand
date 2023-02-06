@@ -20,6 +20,6 @@
       "@lib/*": ["./lib/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/generate-sitemap.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/generate-sitemap.js", "next-sitemap.config.js"],
   "exclude": ["node_modules"]
 }

@@ -45,7 +45,6 @@ const Meta = () => {
         href="/assets/images/favicon/favicon-150x150.png"
       />
 
-      <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
 
       <link
         rel="mask-icon"

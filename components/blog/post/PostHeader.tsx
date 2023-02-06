@@ -2,10 +2,10 @@ import dynamic from "next/dynamic";
 import PostDescription from "@components/blog/post/PostDescription";
 import PostImage from "@components/blog/post/PostImage";
 import PostTitle from "@components/blog/post/PostTitle";
-import TagsComponent from "@components/blog/utils/tags";
 import BlogPost from "@lib/blog/blog-post";
 import styled from "styled-components";
 
+const TagsComponent  = dynamic(() => import("@components/blog/utils/tags"), {ssr: false})
 const AuthorComponent = dynamic<{ post: BlogPost }>(
   () => import("../utils/AuthorComponent").then((mod) => mod.AuthorComponent),
   { ssr: false }
@@ -25,29 +25,19 @@ const PostHeader: React.FCC<{
 }> = ({ post }) => {
   return (
     <>
-      <div className="mx-auto justify-center">
+      {/* <div className="mx-auto justify-center">
         <PostImage
           className={"rounded-lg"}
           preloadImage={true}
           title={post.title}
           src={post.image}
         />
-      </div>
+      </div> */}
 
       <PostCardContainer>
         <AuthorComponent post={post} />
         <TagsComponent
-          tags={[
-            "tag1",
-            "tag2",
-            "tag3",
-            "tag1",
-            "tag2",
-            "tag3",
-            "tag1",
-            "tag2",
-            "tag3",
-          ]}
+          tags={post.tags}
         />
 
         <PostTitle>{post.title}</PostTitle>

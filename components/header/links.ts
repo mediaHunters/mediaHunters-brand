@@ -14,11 +14,15 @@ const links: Array<ILinkText> = [
   },
   {
     text: "Strony internetowe",
-    url: "/strony-internetowe",
+    url: "/strony-internetowe-cennik",
   },
   {
     text: "Pozycjonowanie",
     url: "/pozycjonowanie",
+  },
+  {
+    text: "Blog",
+    url: "/blog",
   },
   {
     text: "Kontakt",
