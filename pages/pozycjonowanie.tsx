@@ -5,6 +5,7 @@ import Head from "next/head";
 import React from "react";
 
 import { LinkDropdown,LinkText } from "../interfaces/link.interface";
+import { Navbar } from "@components/header/navbar";
 
 const HeaderComponent = dynamic(
   () => import("../components/header/header.component")
@@ -63,7 +64,7 @@ const SEO: NextPage = () => {
             "
         />
       </Head>
-      <HeaderComponent links={links} />
+      <Navbar/>
       <SEOComponent />
       <FooterComponent />
     </>

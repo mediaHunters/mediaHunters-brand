@@ -15,6 +15,7 @@ import BlogPost from "@lib/blog/blog-post";
 import { compileMdx } from "@lib/blog/compile-mdx";
 
 import { LinkDropdown,LinkText } from "../../interfaces/link.interface";
+import { Navbar } from "@components/header/navbar";
 
 type Props = {
   post: BlogPost;
@@ -52,7 +53,7 @@ const PostPage = ({ post, morePosts, content }: Props) => {
   return (
     <>
       <Meta />
-      <HeaderComponent links={links} />
+      <Navbar />
 
       <LayoutContainer>
         {/* <PostHead post={post} /> */}
