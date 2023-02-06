@@ -1,15 +1,10 @@
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { Navbar } from "@components/header/navbar";
 
 import React from "react";
 
-import { LinkDropdown,LinkText } from "../interfaces/link.interface";
-import { Navbar } from "@components/header/navbar";
-
-const HeaderComponent = dynamic(
-  () => import("../components/header/header.component")
-);
 
 const SEOComponent = dynamic(() => import("../components/seo/seo.component"));
 const FooterComponent = dynamic(
@@ -17,37 +12,6 @@ const FooterComponent = dynamic(
 );
 
 const SEO: NextPage = () => {
-  const links: Array<LinkText | LinkDropdown> = [
-    {
-      text: "Home",
-      url: "/",
-      type: "link",
-    },
-    {
-      text: "Cennik",
-      type: "dropdown",
-      links: [
-        {
-          text: "Strony internetowe",
-          url: "/strony-internetowe",
-        },
-        {
-          text: "Pozycjonowanie",
-          url: "/pozycjonowanie",
-        },
-      ],
-    },
-    {
-      text: "Projekty",
-      url: "/projekty",
-      type: "link",
-    },
-    {
-      text: "FAQ",
-      url: "/faq",
-      type: "link",
-    },
-  ];
 
   return (
     <>

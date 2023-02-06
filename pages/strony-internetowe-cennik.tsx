@@ -1,51 +1,17 @@
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { Navbar } from "@components/header/navbar";
 
 import React from "react";
 
 import FooterComponent from "../components/footer/footer.component";
-import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
-const HeaderComponent = dynamic(
-  () => import("../components/header/header.component")
-);
 const PricingWebsitesComponent = dynamic(
   () => import("../components/pricing-websites/pricing-websites.component")
 );
 
 export const PricingWebsites: NextPage = () => {
-  const links: Array<LinkText | LinkDropdown> = [
-    {
-      text: "Home",
-      url: "/",
-      type: "link",
-    },
-    {
-      text: "Cennik",
-      type: "dropdown",
-      links: [
-        {
-          text: "Strony internetowe",
-          url: "/strony-internetowe",
-        },
-        {
-          text: "Pozycjonowanie",
-          url: "/pozycjonowanie",
-        },
-      ],
-    },
-    {
-      text: "Projekty",
-      url: "/projekty",
-      type: "link",
-    },
-    {
-      text: "FAQ",
-      url: "/faq",
-      type: "link",
-    },
-  ];
 
   return (
     <>
@@ -58,7 +24,7 @@ export const PricingWebsites: NextPage = () => {
           to mamy atrakcyjne stawki!"
         />
       </Head>
-      <HeaderComponent links={links} />
+      <Navbar/>
       <PricingWebsitesComponent />
       <FooterComponent />
     </>

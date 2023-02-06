@@ -6,70 +6,21 @@ import { Navbar } from "@components/header/navbar";
 import React from "react";
 
 import HeroBannerComponent from "../components/hero-banner/hero-banner.component";
-import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
-const ServicesComponent = dynamic(() => import("../components/services/services.component").then(mod => mod.default))
-const WhyWe = dynamic(() => import("../components/why-we/why-we.conponent").then((mod) => mod.default));
-const ContactFormComponent = dynamic(
-  () => import("../components/contact/contact.component").then((mod) => mod.default)
+const ServicesComponent = dynamic(() =>
+  import("../components/services/services.component").then((mod) => mod.default)
 );
-const FooterComponent = dynamic(
-  () => import("../components/footer/footer.component").then((mod) => mod.default)
+const WhyWe = dynamic(() =>
+  import("../components/why-we/why-we.conponent").then((mod) => mod.default)
+);
+const ContactFormComponent = dynamic(() =>
+  import("../components/contact/contact.component").then((mod) => mod.default)
+);
+const FooterComponent = dynamic(() =>
+  import("../components/footer/footer.component").then((mod) => mod.default)
 );
 
 const HomePage: NextPage = () => {
-  const links: Array<LinkText | LinkDropdown> = [
-    {
-      text: "Home",
-      url: "/",
-      type: "link",
-    },
-    {
-      text: "Dlaczego my?",
-      url: "#dlaczego-my",
-      type: "link",
-    },
-    {
-      text: "Współpraca",
-      url: "#wspolpraca",
-      type: "link",
-    },
-    {
-      text: "Projekty",
-      url: "/projekty",
-      type: "link",
-    },
-    {
-      text: "Usługi",
-      url: "#uslugi",
-      type: "link",
-    },
-    {
-      text: "Cennik",
-      type: "dropdown",
-      links: [
-        {
-          text: "Strony internetowe",
-          url: "/strony-internetowe",
-        },
-        {
-          text: "Pozycjonowanie",
-          url: "/pozycjonowanie",
-        },
-      ],
-    },
-    {
-      text: "FAQ",
-      url: "/faq",
-      type: "link",
-    },
-    {
-      text: "Kontakt",
-      url: "#contact",
-      type: "link",
-    },
-  ];
-
   return (
     <div>
       <Head>

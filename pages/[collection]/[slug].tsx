@@ -4,7 +4,7 @@ import Post from "@components/blog/post/Post";
 import PostsList from "@components/blog/post/PostsList";
 import Meta from "@components/blog/utils/Meta";
 import FooterComponent from "@components/footer/footer.component";
-import HeaderComponent from "@components/header/header.component";
+import { Navbar } from "@components/header/navbar";
 import configuration from "@configuration";
 import {
   getAllPosts,
@@ -13,9 +13,6 @@ import {
 } from "@lib/blog/api";
 import BlogPost from "@lib/blog/blog-post";
 import { compileMdx } from "@lib/blog/compile-mdx";
-
-import { LinkDropdown,LinkText } from "../../interfaces/link.interface";
-import { Navbar } from "@components/header/navbar";
 
 type Props = {
   post: BlogPost;
@@ -32,23 +29,7 @@ type Params = {
 
 const PostPage = ({ post, morePosts, content }: Props) => {
 
-  const links: Array<LinkText | LinkDropdown> = [
-    {
-      text: "Home",
-      url: "/",
-      type: "link",
-    },
-    {
-      text: "Blog",
-      url: "[collection]",
-      type: "link",
-    },
-    {
-      text: "Kontakt",
-      url: "#contact",
-      type: "link",
-    },
-  ];
+
 
   return (
     <>
