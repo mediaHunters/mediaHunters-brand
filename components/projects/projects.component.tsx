@@ -18,6 +18,7 @@ import {
   FilterButton,
   FilterProjectsCard,
   FilterProjectsCardImage,
+  FilterProjectsCardImageText,
   FilterProjectsOverlay,
   FilterProjectsSection,
   FiltersSection,
@@ -114,16 +115,9 @@ function ProjectsComponent(): JSX.Element {
           ) => (
             <FilterProjectsCard key={idx}>
               <FilterProjectsCardImage src={imageUrl} alt={title} />
-              <p
-                style={{
-                  margin: "0",
-                  marginTop: "10px",
-                  textAlign: "center",
-                  width: "100%",
-                }}
-              >
+              <FilterProjectsCardImageText>
                 {title}
-              </p>
+              </FilterProjectsCardImageText>
               <FilterProjectsOverlay>
                 <div>
                   <FontAwesomeIcon

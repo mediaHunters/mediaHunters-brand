@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
-import PostBody from '@components/blog/PostBody';
+import PostBody from '@components/blog/post/PostBody';
 import BlogPost from '@lib/blog/blog-post';
 
 const PostHeader = dynamic(
-  () => import('@components/blog/PostHeader'),
+  () => import('@components/blog/post/PostHeader'),
   { ssr: false }
 )
 

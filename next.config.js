@@ -2,19 +2,17 @@
 /** @type {import('next').NextConfig} */
 
 const withPlugins = require("next-compose-plugins");
-const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache.js");
 
-const PWA = withPWA({
-    runtimeCaching,
-    register: true,
-    skipWaiting: true,
-    disableDevLogs: true,
-    dest: "public",
-    disable: process.env.NODE_ENV === "development"
+const PWA = require("next-pwa")({
+  runtimeCaching,
+  register: true,
+  skipWaiting: true,
+  disableDevLogs: true,
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
 });
 
-require("@next/bundle-analyzer");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });

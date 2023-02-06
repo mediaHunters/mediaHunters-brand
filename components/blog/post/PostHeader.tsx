@@ -1,12 +1,15 @@
 import dynamic from "next/dynamic";
-import PostDescription from "@components/blog/PostDescription";
-import PostImage from "@components/blog/PostImage";
-import PostTitle from "@components/blog/PostTitle";
-import TagsComponent from "@components/blog/tags";
+import PostDescription from "@components/blog/post/PostDescription";
+import PostImage from "@components/blog/post/PostImage";
+import PostTitle from "@components/blog/post/PostTitle";
+import TagsComponent from "@components/blog/utils/tags";
 import BlogPost from "@lib/blog/blog-post";
 import styled from "styled-components";
 
-const AuthorComponent = dynamic<{ post: BlogPost }>(() => import("./AuthorComponent").then(mod => mod.AuthorComponent), {ssr: false});
+const AuthorComponent = dynamic<{ post: BlogPost }>(
+  () => import("../utils/AuthorComponent").then((mod) => mod.AuthorComponent),
+  { ssr: false }
+);
 const PostCardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,8 +19,6 @@ const PostCardContainer = styled.div`
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
   margin-bottom: 30px;
 `;
-
-
 
 const PostHeader: React.FCC<{
   post: BlogPost;
@@ -34,7 +35,7 @@ const PostHeader: React.FCC<{
       </div>
 
       <PostCardContainer>
-          <AuthorComponent post={post} />
+        <AuthorComponent post={post} />
         <TagsComponent
           tags={[
             "tag1",

@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { Navbar } from "@components/header/navbar";
 
 import React from "react";
 
-import HeaderComponent from "../components/header/header.component";
 import HeroBannerComponent from "../components/hero-banner/hero-banner.component";
 import { LinkDropdown, LinkText } from "../interfaces/link.interface";
 
@@ -83,7 +83,7 @@ const HomePage: NextPage = () => {
           content="Media Hunters to specjaliści tworzenia i wdrażania stron internetowych we Wrocławiu i okolicach. Sprawdź nasz cennik usług WWW. Nieszablonowe, autorskie projekty oraz strony na abonament. "
         />
       </Head>
-      <HeaderComponent links={links} />
+      <Navbar />
       <HeroBannerComponent />
       <WhyWe />
       <ServicesComponent />

@@ -159,7 +159,7 @@ function getReadingTimeInMinutes(content: string, wordsPerMinute = 225) {
 
 export function getAllPosts(
   filterFn: (post: Partial<BlogPost>) => boolean = () => true
-) {
+):BlogPost[] {
   const foundPosts = posts.map(getPostBySlug).filter(Boolean) as BlogPost[];
 
   return foundPosts

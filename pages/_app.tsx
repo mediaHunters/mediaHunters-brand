@@ -4,6 +4,7 @@ import { Router } from "next/router";
 import Script from "next/script";
 import MDXThemeProvider from "@components/blog/ThemeProvider";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { AnimatePresence } from "framer-motion";
 import NProgress from "nprogress";
 
 import { useEffect } from "react";
@@ -57,7 +58,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         `}
         </Script>
         <GlobalModal>
+          <AnimatePresence mode="wait" initial={false}>
           <Component {...pageProps} />
+
+          </AnimatePresence>
           <CookieConsent
             enableDeclineButton
             location="bottom"

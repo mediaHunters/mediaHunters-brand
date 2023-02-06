@@ -13,7 +13,7 @@ const TagContainer = styled.div<{ mainColor: string }>`
   align-items: center;
   padding: 7px 14px;
   margin: 5px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   background-color: #f2f2f2;
   color: ${(props) => props.mainColor};
   cursor: pointer;
@@ -61,10 +61,10 @@ const TagsComponent: React.FCC<{ tags: string[] | string }> = ({ tags }) => {
   return (
     <TagsContainer>
       {Array.isArray(tags) ? (
-        tags.map((tags: string, idx: number) => (
+        tags.map((tag: string, idx: number) => (
           <TagContainer mainColor={tagColors[generateRandomNumber()]} key={idx}>
             <FontAwesomeIcon icon={faHashtag} />
-            <Tag>eqwewqewq</Tag>
+            <Tag>{tag}</Tag>
           </TagContainer>
         ))
       ) : (

@@ -1,44 +1,12 @@
 import Head from "next/head";
+import { Navbar } from "@components/header/navbar";
 
 import React from "react";
 
 import FooterComponent from "../components/footer/footer.component";
-import HeaderComponent from "../components/header/header.component";
 import ProjectsComponent from "../components/projects/projects.component";
-import { LinkDropdown,LinkText } from "../interfaces/link.interface";
 
 function Projects() {
-  const links: Array<LinkText | LinkDropdown> = [
-    {
-      text: "Home",
-      url: "/",
-      type: "link",
-    },
-    {
-      text: "Cennik",
-      type: "dropdown",
-      links: [
-        {
-          text: "Strony internetowe",
-          url: "/strony-internetowe",
-        },
-        {
-          text: "Pozycjonowanie",
-          url: "/pozycjonowanie",
-        },
-      ],
-    },
-    {
-      text: "Projekty",
-      url: "/projekty",
-      type: "link",
-    },
-    {
-      text: "FAQ",
-      url: "/faq",
-      type: "link",
-    },
-  ];
 
   return (
     <>
@@ -55,7 +23,7 @@ function Projects() {
             "
         />
       </Head>
-      <HeaderComponent links={links} />
+      <Navbar />
       <ProjectsComponent />
       <FooterComponent />
     </>

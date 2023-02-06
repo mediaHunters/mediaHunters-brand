@@ -1,4 +1,4 @@
-import PostPreview from '@components/blog/PostPreview';
+import PostPreview from '@components/blog/post/PostPreview';
 import BlogPost from '@lib/blog/blog-post';
 import styled from 'styled-components';
 

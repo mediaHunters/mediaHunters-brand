@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ClientOnly from "@components/blog/ClientOnly";
 import {
   Blockquote,
   Code,
@@ -10,10 +9,10 @@ import {
   MDXh5,
   Paragraph,
   Pre,
-} from "@components/blog/MDXComponents.style";
+} from "@components/blog/mdx/MDXComponents.style";
+import ClientOnly from "@components/blog/utils/ClientOnly";
 import configuration from "@configuration";
 
-import PostsList from "./PostsList";
 
 type StringObject = Record<string, string>;
 
@@ -89,7 +88,6 @@ const MDXComponents = {
   blockquote: Blockquote,
   img: NextImage,
   a: ExternalLink,
-  PostsList,
   Video,
   Image: NextImage,
   title: InlineCode,

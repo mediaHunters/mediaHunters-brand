@@ -1,4 +1,4 @@
-import MDXRenderer from '@components/blog/MDXRenderer';
+import MDXRenderer from "@components/blog/mdx/MDXRenderer";
 
 const PostBody: React.FCC<{ content: string }> = ({ content }) => {
   return (

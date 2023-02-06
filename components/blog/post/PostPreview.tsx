@@ -1,12 +1,10 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import DateFormatter from "@components/blog/DateFormatter";
-import PostImage from "@components/blog/PostImage";
 import BlogPost from "@lib/blog/blog-post";
 import styled from "styled-components";
 
 const AuthorComponent = dynamic<{ post: BlogPost }>(
-  () => import("./AuthorComponent").then((mod) => mod.AuthorComponent),
+  () => import("../utils/AuthorComponent").then((mod) => mod.AuthorComponent),
   { ssr: false }
 );
 
@@ -18,7 +16,7 @@ const PostPreviewContainer = styled.div`
   box-shadow: 0px 2px 10px #ccc;
   border-radius: 10px;
   background-color: #fff;
-  max-width: 300px;
+  width: 300px;
   cursor: pointer;
 
   @media (min-width: 700px) {
