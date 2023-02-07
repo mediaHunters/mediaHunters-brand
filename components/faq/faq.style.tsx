@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { lighten } from "polished";
+import styled from "styled-components";
+
 import { AiOutlineSearch } from "react-icons/ai";
 
 export const FaqQuestionsContainer = styled.main`

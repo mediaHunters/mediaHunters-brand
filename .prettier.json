@@ -1,5 +1,18 @@
 {
-    "singleQuote": true,
-    "semi": true,
-    "tabWidth": 2
-  }
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "importOrder": [
+    "^next",
+    "^react",
+    "^@?\\w",
+    "^\\u0000",
+    "^\\.\\.(?!/?$)",
+    "^\\.\\./?$",
+    "^\\./(?=.*/)(?!/?$)",
+    "^\\.(?!/?$)",
+    "^\\./?$",
+    "^.+\\.?(css)$"
+  ],
+  "importOrderSeparation": true
+}

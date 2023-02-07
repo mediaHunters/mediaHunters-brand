@@ -4,6 +4,7 @@ import {
   IoRocketOutline,
   IoWalletOutline,
 } from "react-icons/io5";
+
 import {
   AboutCard,
   AboutCardIcon,

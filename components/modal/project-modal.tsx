@@ -1,9 +1,12 @@
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Modal from "react-bootstrap/Modal";
+
 import { IProjects } from "../projects/projects.data";
+
 import { useGlobalModalContext } from "./globalModal.component";
-import { CardImage, CardDescription, CardStack, CardStackItem, ModalBody, ModalButton } from "./project-modal.style";
+import { CardDescription, CardImage, CardStack, CardStackItem, ModalBody, ModalButton } from "./project-modal.style";
 
 const ProjectModal: React.FC<IProjects> = ({
   imageUrl,

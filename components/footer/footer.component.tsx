@@ -1,4 +1,8 @@
 import Image from "next/image";
+
+import { AiOutlinePhone } from "react-icons/ai";
+import { BsEnvelope } from "react-icons/bs";
+
 import {
   Footer,
   FooterBrand,
@@ -10,8 +14,7 @@ import {
   FooterTop,
   Topic,
 } from "./footer.style";
-import { BsEnvelope } from "react-icons/bs";
-import { AiOutlinePhone } from "react-icons/ai";
+
 const FooterComponent = () => {
   return (
     <Footer>
@@ -25,6 +28,7 @@ const FooterComponent = () => {
                 width="125"
                 height="125"
                 priority={true}
+                loader={({ src }: { src: string }) => src}
               />
             </FooterLink>
           </FooterBrand>
@@ -42,14 +46,14 @@ const FooterComponent = () => {
                 <Topic>
                   <AiOutlinePhone /> Telefon
                 </Topic>
-                <li>+48 731 985 567</li>
+                <li><a href="tel:+48731985567">+48 731 985 567</a></li>
               </FooterLinkList>
 
               <FooterLinkList>
                 <Topic>
                   <BsEnvelope /> Email
                 </Topic>
-                <li>hello.mediahunters@gmail.com</li>
+                <li><a href="mailto:hello.mediahunters@gmail.com">hello.mediahunters@gmail.com</a></li>
               </FooterLinkList>
             </div>
 
@@ -73,7 +77,7 @@ const FooterComponent = () => {
               </li>
 
               <li>
-                <FooterLink href="/strony-internetowe">
+                <FooterLink href="/strony-internetowe-cennik">
                   Strony internetowe
                 </FooterLink>
               </li>

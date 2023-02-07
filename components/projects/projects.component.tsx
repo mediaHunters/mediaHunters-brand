@@ -1,8 +1,24 @@
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { useEffect, useRef, useState } from "react";
+
+import {
+  MODAL_TYPES,
+  useGlobalModalContext,
+} from "../modal/globalModal.component";
+
+import {
+  IFilterObject,
+  IFitlerBlock,
+  IProjects,
+  projects,
+} from "./projects.data";
 import {
   FilterButton,
   FilterProjectsCard,
   FilterProjectsCardImage,
+  FilterProjectsCardImageText,
   FilterProjectsOverlay,
   FilterProjectsSection,
   FiltersSection,
@@ -10,18 +26,6 @@ import {
   ProjectSubHeaderDescription,
   ProjectsWrapper,
 } from "./projects.style";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  MODAL_TYPES,
-  useGlobalModalContext,
-} from "../modal/globalModal.component";
-import {
-  IFilterObject,
-  IFitlerBlock,
-  IProjects,
-  projects,
-} from "./projects.data";
 
 function ProjectsComponent(): JSX.Element {
   const { showModal } = useGlobalModalContext();
@@ -84,7 +88,6 @@ function ProjectsComponent(): JSX.Element {
               project.type === filters.filters[filters.activeIndex].value
           );
     setFilteredProjects(allProjects.current);
-    console.log(filteredProjects);
   }, [filters]);
 
   return (
@@ -112,16 +115,9 @@ function ProjectsComponent(): JSX.Element {
           ) => (
             <FilterProjectsCard key={idx}>
               <FilterProjectsCardImage src={imageUrl} alt={title} />
-              <p
-                style={{
-                  margin: "0",
-                  marginTop: "10px",
-                  textAlign: "center",
-                  width: "100%",
-                }}
-              >
+              <FilterProjectsCardImageText>
                 {title}
-              </p>
+              </FilterProjectsCardImageText>
               <FilterProjectsOverlay>
                 <div>
                   <FontAwesomeIcon

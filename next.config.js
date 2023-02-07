@@ -1,40 +1,67 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
-require('@next/bundle-analyzer')
-const withBundleAnalyzer  = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-})
 
-  
+const withPlugins = require("next-compose-plugins");
+const runtimeCaching = require("next-pwa/cache.js");
+
+const PWA = require("next-pwa")({
+  runtimeCaching,
+  register: true,
+  skipWaiting: true,
+  disableDevLogs: true,
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
+});
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+const MS_PER_SECOND = 1000;
+const SECONDS_PER_DAY = 86400;
+
 const nextConfig = {
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
   reactStrictMode: false,
   swcMinify: false,
+  styledComponents: true,
   images: {
     minimumCacheTTL: 60,
+    domains: ["images.unsplash.com", "picsum.photos"],
+    loader: "custom",
+    unoptimized: true,
+  },
+  experimental: {
+    styledComponents: true
+},
+
+  onDemandEntries: {
+    maxInactiveAge: SECONDS_PER_DAY * MS_PER_SECOND,
+    pagesBufferLength: 100,
   },
 
   async headers() {
     return [
       {
-        source: '/:all*(js|css)',
+        source: "/:all*(js|css)",
         locale: false,
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          }
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
-    ]
+    ];
   },
-}
 
-module.exports = withBundleAnalyzer({
-  env: {
-      NEXT_PUBLIC_ENV: 'PRODUCTION', //your next configs goes here
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback.fs = false;
+    }
+
+    return config;
   },
-  ...nextConfig
-})
+};
 
-
-
+module.exports = withPlugins([PWA, withBundleAnalyzer], nextConfig);

@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineCheck } from "react-icons/ai";
+
 const CookiesComponent = () => {
   return (
     <div className="container mt-5 mb-5">

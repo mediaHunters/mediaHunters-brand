@@ -1,9 +1,11 @@
 import Link from "next/link";
-import React from "react";
-import { ISeoTableData, SeoPackets, TableDataType } from "./seo-table.data";
-import { PricingButton } from "./seo.style";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import React from "react";
+
+import { PricingButton } from "./seo.style";
+import { ISeoTableData, SeoPackets, TableDataType } from "./seo-table.data";
 
 interface ISeoTableComponent {
   data: ISeoTableData;

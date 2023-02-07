@@ -1,16 +1,19 @@
 import Link from "next/link";
+
 import Container from "react-bootstrap/Container";
+
 import { Footer } from "../footer/footer.style";
+
 import {
-  WebsitesMainHeader,
-  WebsitesDescription,
-  WebsitesGrid,
-  WebsitesGridHeaderText,
-  WebsitesGridQuestion,
   WebsitePackageImage,
+  WebsitesDescription,
   WebsitesGirdHeader,
+  WebsitesGrid,
   WebsitesGridAnswer,
+  WebsitesGridHeaderText,
   WebsitesGridPrice,
+  WebsitesGridQuestion,
+  WebsitesMainHeader,
   WebsitesPackageImageWrapper,
 } from "./pricing-websites.style";
 
@@ -67,6 +70,7 @@ const PricingWebsitesComponent = () => {
                 alt="strony-Multipage-cennik"
                 width="400"
                 height="400"
+                loader={({ src }: { src: string }) => src}
               />
             </picture>
           </WebsitesPackageImageWrapper>
@@ -75,13 +79,14 @@ const PricingWebsitesComponent = () => {
 
       <Container>
         <WebsitesGrid>
-          <WebsitesPackageImageWrapper >
+          <WebsitesPackageImageWrapper>
             <picture>
               <WebsitePackageImage
                 src="/images/Onepage.png"
                 alt="tanie-strony-wizytówki"
                 width="400"
                 height="400"
+                loader={({ src }: { src: string }) => src}
               />
             </picture>
           </WebsitesPackageImageWrapper>
@@ -148,6 +153,7 @@ const PricingWebsitesComponent = () => {
                 alt="dedykowane-strony-www"
                 width="400"
                 height="400"
+                loader={({ src }: { src: string }) => src}
               />
             </picture>
           </WebsitesPackageImageWrapper>

@@ -1,6 +1,7 @@
+import { PricingSection } from './seo.style'
 import SeoTableComponent from "./seo-table";
 import { SeoTableData } from "./seo-table.data";
-import { PricingSection } from './seo.style'
+
 const SEOComponent = () => {
   return (
     <PricingSection className="pricing-section">

@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
 import { lighten } from "polished";
+import styled, { keyframes } from "styled-components";
+
 import Card from "react-bootstrap/Card";
 
 export const ProjectsWrapper = styled.main`
@@ -34,8 +35,7 @@ export const FiltersSection = styled.div`
   margin-top: 40px;
   flex-wrap: wrap;
   @media (max-width: 548px) {
-
-  justify-content: center;
+    justify-content: center;
   }
 `;
 
@@ -73,12 +73,11 @@ export const FilterProjectsSection = styled.div`
 export const showUp = keyframes`
 0% { opacity: 0 }
   100% { opacity: 1; } 
-`
+`;
 
 export const FilterProjectsCard = styled(Card)`
-margin: 0 40px;
+  margin: 20px 0;
   max-width: 500px;
-  width: 100%;
   position: relative;
   padding: 10px;
   align-items: flex-start;
@@ -87,8 +86,14 @@ margin: 0 40px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   transition: all 0.5s ease;
   animation-name: ${showUp} 1.4s;
+  min-width: 350px;
+  width: 100%;
   &:hover {
     box-shadow: none;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 40px;
   }
 `;
 
@@ -124,4 +129,13 @@ export const FilterProjectsCardImage = styled.img`
   height: auto;
   position: relative;
   object-fit: contain;
+  margin-bottom: 30px;
+`;
+
+export const FilterProjectsCardImageText = styled.p`
+    position: absolute;
+    margin-bottom: 0;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
 `;

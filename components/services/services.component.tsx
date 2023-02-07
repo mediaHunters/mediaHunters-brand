@@ -1,6 +1,8 @@
-import React from 'react'; 
-import { ServiceData, servicesData } from "./services.data";
 import Image from 'next/image';
+
+import React from 'react'; 
+
+import { ServiceData, servicesData } from "./services.data";
 
 const ServicesComponent = () => {
   return (
@@ -13,6 +15,7 @@ const ServicesComponent = () => {
             width="400"
             height="500"
             priority={true}
+            loader={({ src }: { src: string }) => src}
           />
         </figure>
 
