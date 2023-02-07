@@ -27,7 +27,7 @@ export const BlogComponent = ({ posts }: { posts: BlogPost[] }) => {
           </BlogText>
           <BlogPostHeader>{post.title}</BlogPostHeader>
           <TagsComponent tags={post.tags} />
-          <BlogText>
+          <BlogText className="mb-3">
             {post.description}
           </BlogText>
           <Link href={`${post.collection.slug}/${post.slug}`}>Czytaj więcej →</Link>
