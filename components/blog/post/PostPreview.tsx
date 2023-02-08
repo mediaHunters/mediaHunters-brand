@@ -75,19 +75,19 @@ const PostPreview: React.FCC<{
 
   return (
     <>
-      <Link href={href} as={hrefAs} passHref>
         <PostPreviewContainer>
+      <Link href={href} as={hrefAs} passHref>
           <div>
-            <PreviewImage src={post.image} />
             <PrieviewTitleWrapper>
               <PreviewTitle>{post.title}</PreviewTitle>
               <PreviewDescription>{post.description}</PreviewDescription>
             </PrieviewTitleWrapper>
+            <PreviewImage src={post.image} />
           </div>
 
           <AuthorComponent post={post} />
-        </PostPreviewContainer>
       </Link>
+        </PostPreviewContainer>
     </>
   );
 };

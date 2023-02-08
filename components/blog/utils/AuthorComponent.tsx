@@ -9,7 +9,7 @@ const AuthorContainerWrapper = styled.div`
   padding: 20px;
   width: 100%;;
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 `;
@@ -24,6 +24,10 @@ const AuthorImage = styled(Image)`
   height: 50px;
   border-radius: 25px;
   margin-right: 20px;
+
+@media (max-width: 768px) {
+  margin-bottom: 5px;
+}
 `;
 
 const AuthorName = styled.h3`

@@ -25,14 +25,14 @@ const PostHeader: React.FCC<{
 }> = ({ post }) => {
   return (
     <>
-      {/* <div className="mx-auto justify-center">
+      <div className="mx-auto justify-center">
         <PostImage
           className={"rounded-lg"}
           preloadImage={true}
           title={post.title}
           src={post.image}
         />
-      </div> */}
+      </div>
 
       <PostCardContainer>
         <AuthorComponent post={post} />
