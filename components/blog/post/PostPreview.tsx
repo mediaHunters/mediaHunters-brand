@@ -18,7 +18,7 @@ const PostPreviewContainer = styled.div`
   background-color: #fff;
   width: 300px;
   cursor: pointer;
-
+  margin: 2 0px auto;
   @media (min-width: 700px) {
     justify-content: space-between;
   }

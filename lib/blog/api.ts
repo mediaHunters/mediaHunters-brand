@@ -1,15 +1,15 @@
-import { existsSync, readdirSync, readFileSync } from 'fs';
-import matter from 'gray-matter';
-import { join } from 'path';
+import { existsSync, readdirSync, readFileSync } from "fs";
+import matter from "gray-matter";
+import { join } from "path";
 
-import BlogPost from './blog-post';
+import BlogPost from "./blog-post";
 
-const POSTS_DIRECTORY_NAME = '_posts';
+const POSTS_DIRECTORY_NAME = "_posts";
 const COLLECTIONS_DIRECTORY_NAME = `_collections`;
 const AUTHORS_DIRECTORY_NAME = `_authors`;
 
-const MDX_EXTENSION = '.mdx';
-const JSON_EXTENSION = '.json';
+const MDX_EXTENSION = ".mdx";
+const JSON_EXTENSION = ".json";
 
 const postsDirectory = join(process.cwd(), POSTS_DIRECTORY_NAME);
 const collections = readJson(COLLECTIONS_DIRECTORY_NAME);
@@ -28,7 +28,7 @@ function readJson(directoryName: string) {
         return;
       }
 
-      const json = readFileSync(path, 'utf-8');
+      const json = readFileSync(path, "utf-8");
 
       try {
         const data = JSON.parse(json);
@@ -49,7 +49,7 @@ function readJson(directoryName: string) {
 
 export function readFrontMatter(fullPath: string) {
   try {
-    const fileContents = readFileSync(fullPath, 'utf-8');
+    const fileContents = readFileSync(fullPath, "utf-8");
 
     return matter(fileContents);
   } catch (e) {
@@ -83,17 +83,17 @@ export function getPostBySlug(slug: string) {
   };
 
   for (const field in data) {
-    if (field === 'collection') {
+    if (field === "collection") {
       post[field] = getCollection(data[field]);
       continue;
     }
 
-    if (field === 'author') {
+    if (field === "author") {
       post[field] = getAuthor(data[field]);
       continue;
     }
 
-    if (field === 'date' && data.date) {
+    if (field === "date" && data.date) {
       try {
         post[field] = new Date(data.date).toISOString();
         continue;
@@ -114,7 +114,7 @@ export function getPostBySlug(slug: string) {
 }
 
 export function getCollection(slug: string) {
-  const collectionSlug = slug.replace(COLLECTIONS_DIRECTORY_NAME + '/', '');
+  const collectionSlug = slug.replace(COLLECTIONS_DIRECTORY_NAME + "/", "");
 
   const collection = collections.find((item) => {
     return [item?.slug, item?.realSlug].includes(collectionSlug);
@@ -133,7 +133,7 @@ export function getCollection(slug: string) {
 }
 
 export function getAuthor(slug: string) {
-  const authorFileName = slug.replace(AUTHORS_DIRECTORY_NAME + '/', '');
+  const authorFileName = slug.replace(AUTHORS_DIRECTORY_NAME + "/", "");
 
   const author = authors.find((item) => {
     return [item?.slug, item?.realSlug].includes(authorFileName);
@@ -159,7 +159,7 @@ function getReadingTimeInMinutes(content: string, wordsPerMinute = 225) {
 
 export function getAllPosts(
   filterFn: (post: Partial<BlogPost>) => boolean = () => true
-):BlogPost[] {
+): BlogPost[] {
   const foundPosts = posts.map(getPostBySlug).filter(Boolean) as BlogPost[];
 
   return foundPosts
@@ -171,7 +171,7 @@ export function getAllPosts(
 function filterByPublishedPostsOnly(post: BlogPost) {
   // we want to exclude blog posts
   // if it's the prod env AND if not live
-  if (!process.env.production || !('live' in post)) {
+  if (!process.env.production || !("live" in post)) {
     return true;
   }
 
@@ -195,6 +195,20 @@ function sortBlogPostByDate(item: BlogPost, nextItem: BlogPost) {
   return item.date > nextItem.date ? -1 : 1;
 }
 
+export function getPostsPaginated(pageNumber = 1, pageSize = 10) {
+  const startIndex = (pageNumber - 1) * pageSize;
+  let posts = [...getAllPosts(), ...getAllPosts(), ...getAllPosts()];
+  const pageCount = Math.ceil(posts.length / pageSize);
+
+  posts = posts.slice(startIndex, startIndex + pageSize);
+
+  return {
+    data: posts,
+    total: posts.length,
+    pageCount,
+  };
+}
+
 function removeExtensionFromSlug(slug: string, extension = MDX_EXTENSION) {
-  return slug.replace(extension, '');
+  return slug.replace(extension, "");
 }

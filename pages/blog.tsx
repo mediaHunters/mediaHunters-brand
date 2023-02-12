@@ -1,14 +1,16 @@
+import { GetServerSidePropsContext } from "next";
 import { BlogComponent } from "@components/blog/blog.component";
 import FooterComponent from "@components/footer/footer.component";
 import { Navbar } from "@components/header/navbar";
-import { getAllPosts } from "@lib/blog/api";
-import BlogPost from "@lib/blog/blog-post";
+import { getPostsPaginated } from "@lib/blog/api";
 
-const Blog = ({posts}: {posts: BlogPost[]}) => {
+import { Pagination } from "../interfaces/pagination";
+
+const Blog = (props: Pagination) => {
   return (
     <>
       <Navbar />
-      <BlogComponent posts={posts}/>
+      <BlogComponent props={props} />
       <FooterComponent />
     </>
   );
@@ -16,13 +18,15 @@ const Blog = ({posts}: {posts: BlogPost[]}) => {
 
 export default Blog;
 
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const page = context.query["id"] ? Number(context.query["id"]) : 1;
 
-export async function getStaticProps() {
-  const posts = getAllPosts();
-  
+  const data = await getPostsPaginated(page);
+
   return {
     props: {
-      posts,
+      data: data.data,
+      pageCount: data.pageCount,
     },
   };
 }
