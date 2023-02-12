@@ -197,7 +197,7 @@ function sortBlogPostByDate(item: BlogPost, nextItem: BlogPost) {
 
 export function getPostsPaginated(pageNumber = 1, pageSize = 10) {
   const startIndex = (pageNumber - 1) * pageSize;
-  let posts = [...getAllPosts(), ...getAllPosts(), ...getAllPosts()];
+  let posts = getAllPosts();
   const pageCount = Math.ceil(posts.length / pageSize);
 
   posts = posts.slice(startIndex, startIndex + pageSize);
