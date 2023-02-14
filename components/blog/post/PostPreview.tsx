@@ -12,7 +12,7 @@ const PostPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 20px auto;
   box-shadow: 0px 2px 10px #ccc;
   border-radius: 10px;
   background-color: #fff;
