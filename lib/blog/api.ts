@@ -192,7 +192,7 @@ function sortBlogPostByDate(item: BlogPost, nextItem: BlogPost) {
     return 1;
   }
 
-  return item.date > nextItem.date ? -1 : 1;
+  return Date.parse(item.date) > Date.parse(nextItem.date) ? -1 : 1;
 }
 
 export function getPostsPaginated(pageNumber = 1, pageSize = 10) {
