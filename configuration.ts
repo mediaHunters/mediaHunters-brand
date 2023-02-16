@@ -1,15 +1,15 @@
 const configuration = {
     site: {
-      name: 'MakerKit - Next.js Blog Starter',
+      name: 'Blog',
       description:
         'MakerKit is the SaaS starter built with Next.js, Firebase and' +
         ' Tailwind that lets you launch your next idea in minutes.',
       themeColor: '#efee00',
-      siteUrl: 'https://makerkit.dev',
-      siteName: 'MakerKit Next.js Blog Starter',
-      twitterHandle: 'makerkit_dev',
-      githubHandle: 'makerkit',
-      language: 'en',
+      siteUrl: 'https://mediahunters.pl',
+      siteName: 'MediaHunters',
+      twitterHandle: 'none',
+      githubHandle: 'mediahunters',
+      language: 'pl',
     },
     blog: {
       maxReadMorePosts: 6,
