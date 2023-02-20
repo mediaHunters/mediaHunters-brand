@@ -11,12 +11,14 @@ const AuthorComponent = dynamic<{ post: BlogPost }>(
 const PostPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
   margin: 20px auto;
+  height: 370px;
   box-shadow: 0px 2px 10px #ccc;
   border-radius: 10px;
   background-color: #fff;
-  width: 300px;
+  width: 340px;
   cursor: pointer;
   margin: 2 0px auto;
   @media (min-width: 700px) {
@@ -51,7 +53,7 @@ const PreviewImage = styled.img`
 `;
 
 const PreviewTitle = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 `;
 
@@ -62,7 +64,7 @@ const PrieviewTitleWrapper = styled.div`
 `;
 
 const PreviewDescription = styled.p`
-  font-size: 10px;
+  font-size: 12px;
   text-align: justify;
   line-height: 1.5;
 `;
@@ -76,16 +78,18 @@ const PostPreview: React.FCC<{
   return (
     <>
         <PostPreviewContainer>
-      <Link href={href} as={hrefAs} passHref>
+      <Link href={href} as={hrefAs} passHref  >
           <div>
             <PrieviewTitleWrapper>
               <PreviewTitle>{post.title}</PreviewTitle>
               <PreviewDescription>{post.description}</PreviewDescription>
             </PrieviewTitleWrapper>
-            <PreviewImage src={post.image} />
           </div>
 
+          <div style={{position: 'absolute', bottom: '0'}}>
+            <PreviewImage src={post.image} />
           <AuthorComponent post={post} />
+          </div>
       </Link>
         </PostPreviewContainer>
     </>

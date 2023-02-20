@@ -29,8 +29,6 @@ type Params = {
 
 const PostPage = ({ post, morePosts, content }: Props) => {
 
-
-
   return (
     <>
       <Meta />
@@ -38,7 +36,6 @@ const PostPage = ({ post, morePosts, content }: Props) => {
 
       <LayoutContainer>
         {/* <PostHead post={post} /> */}
-
         <Post content={content} post={post} />
 
         <div className={"max-w-2xl mx-auto flex flex-col space-y-8 pb-32 mt-5"}>

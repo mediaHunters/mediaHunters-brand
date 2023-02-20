@@ -95,7 +95,8 @@ export const Paragraph = styled.p`
   color: #333;
   margin: 1.5rem 0;
   text-align: justify;
-
+  margin-left: auto;
+  margin-right: auto;
   @media (min-width: 720px) {
     font-size: 1.5rem;
   }

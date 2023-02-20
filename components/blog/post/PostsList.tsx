@@ -10,7 +10,7 @@ const PostListContainer = styled.div`
   flex-direction: column;
 
 @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 6px 0;
     flex-direction: row;
 }
