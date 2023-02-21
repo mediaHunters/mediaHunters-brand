@@ -171,10 +171,10 @@ export function getAllPosts(
 function filterByPublishedPostsOnly(post: BlogPost) {
   // we want to exclude blog posts
   // if it's the prod env AND if not live
-  if (!process.env.production || !("live" in post)) {
+  // !process.env.production
+  if ( !("live" in post)) {
     return true;
   }
-
   return post.live;
 }
 

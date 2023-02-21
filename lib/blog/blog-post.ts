@@ -14,6 +14,7 @@ type BlogPost = {
   content: string;
   readingTime: number;
   canonical?: string;
+  outline?: string[];
 };
 
 export default BlogPost;

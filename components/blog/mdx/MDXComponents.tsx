@@ -18,16 +18,18 @@ import configuration from "@configuration";
 type StringObject = Record<string, string>;
 
 const NextImage: React.FCC<StringObject> = (props: StringObject) => {
-  const width = props.width ?? 4;
-  const height = props.height ?? 3;
+  const width = props.width ?? '454';
+  const height = props.height ?? '124';
 
   return (
     <Image
+    style={{margin: '0 auto'}}
       width={parseInt(width)}
       height={parseInt(height)}
       className={props.class}
       src={props.src}
       alt={props.alt}
+      loader={({ src }: { src: string }) => src}
       {...props}
     />
   );
