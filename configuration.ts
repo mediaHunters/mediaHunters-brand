@@ -2,8 +2,7 @@ const configuration = {
     site: {
       name: 'Blog',
       description:
-        'MakerKit is the SaaS starter built with Next.js, Firebase and' +
-        ' Tailwind that lets you launch your next idea in minutes.',
+        'Blog o tematyce tworzenia stron internetowych i marketing\'u w Internecie',
       themeColor: '#efee00',
       siteUrl: 'https://mediahunters.pl',
       siteName: 'MediaHunters',
