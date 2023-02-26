@@ -19,6 +19,7 @@ const NavbarContainer = styled.div`
   padding: 20px;
   background-color: #fff;
   overflow: hidden;
+  margin-bottom: 20px;
 `;
 
 const LeftSection = styled.div`
