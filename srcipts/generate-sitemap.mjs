@@ -12,7 +12,7 @@ const generateSitemap = async () => {
     '!../pages/api', // Ignore API routes
     '!../pages/admin.tsx' // Ignore pages not meant to be indexed
   ]);
-  console.log(pages)
+
   const urlSet = pages
     .map((page) => {
       // Remove none route related parts of filename.
