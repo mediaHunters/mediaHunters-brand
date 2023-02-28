@@ -15,7 +15,6 @@ const ServicesComponent = () => {
             width="400"
             height="500"
             priority={true}
-            loader={({ src }: { src: string }) => src}
           />
         </figure>
 

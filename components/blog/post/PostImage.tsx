@@ -36,9 +36,8 @@ const PostImage = ({
       src={src}
       priority={preloadImage}
       alt={`Cover Image for ${title}`}
-      width={width ?? 16}
-      height={height ?? 9}
-      loader={customLoader}
+      width={width ?? 1000}
+      height={height ?? 300}
     />
   );
 };

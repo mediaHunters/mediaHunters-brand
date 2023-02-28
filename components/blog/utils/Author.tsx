@@ -14,7 +14,6 @@ const Author: React.FCC<{ author: AuthorType }> = ({ author }) => {
             height={imageSize}
             src={author.picture}
             alt={alt}
-          loader={({ src }: { src: string }) => src}
           />
         ) : null}
 

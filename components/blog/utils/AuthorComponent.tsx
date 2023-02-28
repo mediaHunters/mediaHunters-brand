@@ -59,7 +59,6 @@ export const AuthorComponent: React.FC<{ post: BlogPost }> = ({ post }) => {
       <AuthorImage
         src={post.author.picture}
         alt={post.image}
-        loader={({ src }: { src: string }) => src}
         width={50}
         height={50}
       />

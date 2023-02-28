@@ -19,7 +19,7 @@ const Logo = () => {
           width="125"
           height="125"
           priority={true}
-          loader={({ src }: { src: string }) => src}
+    
         />
       </Link>
     </LogoWrapper>

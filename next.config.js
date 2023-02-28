@@ -28,8 +28,6 @@ const nextConfig = {
   images: {
     minimumCacheTTL: 60,
     domains: ["images.unsplash.com", "picsum.photos"],
-    loader: "custom",
-    unoptimized: true,
   },
   experimental: {
     styledComponents: true

@@ -64,7 +64,6 @@ class FaqComponent extends React.Component<IFaqProps, IFaqState> {
               alt="waving hand"
               width="40"
               height="40"
-      loader={({ src }: { src: string }) => src}
               priority={true}
             />
             <FaqQuestionsContainerSubHeader>FAQ’S - Najczęściej zadawane pytania</FaqQuestionsContainerSubHeader>

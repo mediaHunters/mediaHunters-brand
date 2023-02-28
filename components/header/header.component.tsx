@@ -109,7 +109,6 @@ export class headerComponent extends React.Component<headerProps, headerState> {
               width="125"
               height="125"
               priority={true}
-              loader={({ src }: { src: string }) => src}
             />
           </BasicLink>
           <Navbar>
