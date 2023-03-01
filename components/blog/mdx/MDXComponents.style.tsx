@@ -98,6 +98,11 @@ export const Paragraph = styled.p`
   @media (min-width: 720px) {
     font-size: 1.5rem;
   }
+
+  &:only-child > img {
+    /* Your conditional styles here */
+    display: none;
+}
 `;
 
 

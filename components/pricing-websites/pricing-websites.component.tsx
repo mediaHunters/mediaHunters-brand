@@ -70,7 +70,6 @@ const PricingWebsitesComponent = () => {
                 alt="strony-Multipage-cennik"
                 width="400"
                 height="400"
-                loader={({ src }: { src: string }) => src}
               />
             </picture>
           </WebsitesPackageImageWrapper>
@@ -86,7 +85,6 @@ const PricingWebsitesComponent = () => {
                 alt="tanie-strony-wizytówki"
                 width="400"
                 height="400"
-                loader={({ src }: { src: string }) => src}
               />
             </picture>
           </WebsitesPackageImageWrapper>
@@ -153,7 +151,7 @@ const PricingWebsitesComponent = () => {
                 alt="dedykowane-strony-www"
                 width="400"
                 height="400"
-                loader={({ src }: { src: string }) => src}
+          
               />
             </picture>
           </WebsitesPackageImageWrapper>
