@@ -28,9 +28,11 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
   styledComponents: true,
+  httpAgentOptions: {
+    keepAlive: true,
+  },
   images: {
     minimumCacheTTL: 60,
-    domains: ["images.unsplash.com", "picsum.photos"],
   },
   assetPrefix: isProd ? 'https://Mediahunters.b-cdn.net' : undefined,
   experimental: {
