@@ -24,7 +24,7 @@ export const HeroContent = styled.div`
       transform: translateY(-50%);
       width: 500px;
       padding-top: 500px;
-      background: url("../assets/images/hero-banner.png") no-repeat;
+      background: url("https://Mediahunters.b-cdn.net/images/hero-banner.png") no-repeat;
       background-size: contain;
       text-align: left;
     }
