@@ -83,15 +83,20 @@ export const Form = styled.form`
 `;
 
 export const InputWrapper = styled.div`
-  height: 50px;
+  /* height: 50px; */
   width: 100%;
   margin: 12px 0;
+  & input {
+    height: 50px;
+  }
+
+  & textarea {
+    height: 100px;
+  }
   & input,
   & textarea {
-    height: 100%;
     width: 100%;
     border: none;
-    outline: none;
     font-size: 16px;
     background: ${(props) => props.theme.colors.gray};
     border-radius: 6px;

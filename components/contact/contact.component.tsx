@@ -108,6 +108,7 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
               >
                 <InputWrapper>
                   <input
+                  autoComplete="false"
                     type="text"
                     placeholder="Imię"
                     name="name"
@@ -118,6 +119,7 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
                 </InputWrapper>
                 <InputWrapper>
                   <input
+                  autoComplete="false"
                     type="text"
                     placeholder="Email"
                     name="email"
@@ -128,6 +130,7 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
                 </InputWrapper>
                 <InputWrapper>
                   <input
+                  autoComplete="false"
                     type="text"
                     placeholder="nr tel."
                     name="phone"
@@ -138,11 +141,10 @@ class ContactFormComponent extends React.Component<unknown, IContactFormState> {
                 </InputWrapper>
                 <InputWrapper>
                   <textarea
+                    autoComplete="false"
                     onChange={this.handleInputChangeEdit}
                     name="message"
                     id="message"
-                    cols={30}
-                    rows={10}
                     value={this.state.message}
                     placeholder="wiadomość..."
                   ></textarea>
