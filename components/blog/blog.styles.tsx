@@ -59,3 +59,15 @@ export const BlogPostHeader = styled.div`
   font-weight: 700;
   font-size: 18px;
 `;
+
+export const BlogPagination = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const BlogPaginationLink = styled.p`
+  margin: 30px 10px 0 0;
+  color: ${(props) => props.theme.colors.bittersweet};
+  cursor: pointer
+`
+
