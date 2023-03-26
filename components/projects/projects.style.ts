@@ -47,7 +47,6 @@ export const FilterButton = styled.button<{ active: boolean }>`
   transition: background 0.3s ease;
   color: ${(props) => props.theme.colors.black};
   border: 2px solid ${(props) => props.theme.colors.black};
-  border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
   &:hover {
@@ -103,7 +102,6 @@ export const FilterProjectsOverlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0);
   transition: all 0.5s ease;
-  border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,5 +1,5 @@
-import axios from "axios";
 import { NextApiResponse } from "next";
+import axios from "axios";
 
 function verifyUser(captcha: string, res: NextApiResponse) {
   if (!captcha) {
@@ -17,4 +17,18 @@ function verifyUser(captcha: string, res: NextApiResponse) {
     });
 }
 
-export { verifyUser };
+function getHash(text: string) {
+  let hash = 0;
+  if (text.length === 0) {
+    return hash.toString();
+  }
+  for (let i = 0; i < text.length; i++) {
+    const char = text.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return hash.toString();
+}
+
+
+export { getHash, verifyUser };

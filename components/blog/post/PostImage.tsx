@@ -2,12 +2,10 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 // opt-out of image optimization, no-op
-const customLoader = ({ src }: {src: string}) => src
 const ImageComponent = styled(Image)`
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 10px;
   margin-bottom: 20px;
 
 @media (max-width: 768px) {

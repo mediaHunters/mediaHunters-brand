@@ -2,7 +2,7 @@ import { GetServerSidePropsContext } from "next";
 import { BlogComponent } from "@components/blog/blog.component";
 import FooterComponent from "@components/footer/footer.component";
 import { Navbar } from "@components/header/navbar";
-import { getPostsPaginated } from "@lib/blog/api";
+import { getPostsPaginated, getSelectedPosts } from "@lib/blog/api";
 import styled, { keyframes } from "styled-components";
 
 import { Pagination } from "../interfaces/pagination";
@@ -27,7 +27,7 @@ const Blog = (props: Pagination) => {
   return (
     <>
       <Navbar />
-      {props.data ? (
+      {props ? (
         <BlogComponent props={props} />
       ) : (
         <Loader>
@@ -44,19 +44,20 @@ const Blog = (props: Pagination) => {
 export default Blog;
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const page = context.query["id"] ? Number(context.query["id"]) : 1;
-
-  const { data, pageCount } = await getPostsPaginated(page);
-
+  const { data, total, pageCount, categories } = await getPostsPaginated();
   context.res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-)
-  
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const showOffPosts = await getSelectedPosts();
   return {
     props: {
-      data: data,
-      pageCount: pageCount,
+      data,
+      total,
+      pageCount,
+      categories,
+      showOffPosts: showOffPosts
     },
   };
 }

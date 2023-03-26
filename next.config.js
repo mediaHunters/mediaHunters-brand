@@ -34,7 +34,7 @@ const nextConfig = {
   images: {
     minimumCacheTTL: 60,
   },
-  assetPrefix: isProd ? 'https://Mediahunters.b-cdn.net' : undefined,
+  // assetPrefix: isProd ? 'https://Mediahunters.b-cdn.net' : undefined,
   experimental: {
     styledComponents: true
 },

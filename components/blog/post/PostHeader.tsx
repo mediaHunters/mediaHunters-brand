@@ -5,19 +5,28 @@ import PostTitle from "@components/blog/post/PostTitle";
 import BlogPost from "@lib/blog/blog-post";
 import styled from "styled-components";
 
-const TagsComponent  = dynamic(() => import("@components/blog/utils/tags"), {ssr: false})
 const AuthorComponent = dynamic<{ post: BlogPost }>(
   () => import("../utils/AuthorComponent").then((mod) => mod.AuthorComponent),
   { ssr: false }
 );
 const PostCardContainer = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   padding: 20px;
-  border-radius: 10px;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
   margin-bottom: 30px;
+`;
+
+export const Tag = styled.span`
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 `;
 
 const PostHeader: React.FCC<{
@@ -32,13 +41,12 @@ const PostHeader: React.FCC<{
           title={post.title}
           src={post.image}
         />
+        
       </div>
 
       <PostCardContainer>
         <AuthorComponent post={post} />
-        <TagsComponent
-          tags={post.tags}
-        />
+        <Tag>{post.tags[0]}</Tag>
 
         <PostTitle>{post.title}</PostTitle>
 

@@ -6,7 +6,7 @@ export const BlogContainer = styled(Container)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 720px !important;
+  max-width: 420px !important;
   padding: 20px;
   @media only screen and (min-width: 768px) {
     padding: 20px 80px;
@@ -62,7 +62,7 @@ export const BlogPostHeader = styled.div`
 
 export const BlogPagination = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `
 
 export const BlogPaginationLink = styled.p`

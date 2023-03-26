@@ -16,11 +16,9 @@ const PostPreviewContainer = styled.div`
   margin: 20px auto;
   height: 370px;
   box-shadow: 0px 2px 10px #ccc;
-  border-radius: 10px;
   background-color: #fff;
   width: 340px;
   cursor: pointer;
-  margin: 2 0px auto;
   @media (min-width: 700px) {
     justify-content: space-between;
   }
@@ -55,6 +53,7 @@ const PreviewImage = styled.img`
 const PreviewTitle = styled.h3`
   font-size: 20px;
   text-align: center;
+  min-height: 75px;
 `;
 
 const PrieviewTitleWrapper = styled.div`
@@ -65,6 +64,7 @@ const PrieviewTitleWrapper = styled.div`
 
 const PreviewDescription = styled.p`
   font-size: 12px;
+  padding:  7px;
   text-align: justify;
   line-height: 1.5;
 `;

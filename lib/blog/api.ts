@@ -2,6 +2,8 @@ import { existsSync, readdirSync, readFileSync } from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
+import { getHash } from "../../utils/helpers";
+
 import BlogPost from "./blog-post";
 
 const POSTS_DIRECTORY_NAME = "_posts";
@@ -195,19 +197,90 @@ function sortBlogPostByDate(item: BlogPost, nextItem: BlogPost) {
   return Date.parse(item.date) > Date.parse(nextItem.date) ? -1 : 1;
 }
 
-export function getPostsPaginated(pageNumber = 1, pageSize = 10) {
+interface PostPagination {
+  data: BlogPost[];
+  total: number;
+  pageCount: number;
+  categories: { text: string; name: string | undefined; }[];
+}
+
+
+
+
+export function getPostsPaginated(
+  pageNumber = 1,
+  pageSize = 10,
+  collection?: string,
+  searchValue?: string
+): PostPagination {
   const startIndex = (pageNumber - 1) * pageSize;
-  let posts = getAllPosts();
-  const pageCount = Math.ceil(posts.length / pageSize);
+  const allPosts = getAllPosts();
+  const categories = allPosts
+    .map(({ collection: { text, name } }) => ({ text, name }))
+    .filter((obj, index, self) => index === self.findIndex((t) => t.name === obj.name));
+    const posts = collection ? getPostsByCollection(collection) : allPosts;
+  let filtered = searchValue
+    ? posts.filter((post: BlogPost) => post.title.toLocaleLowerCase().includes(searchValue.toLowerCase()))
+    : posts;
+  const pageCount = Math.ceil(filtered.length / pageSize);
+  
 
-  posts = posts.slice(startIndex, startIndex + pageSize);
-
+  filtered = filtered.slice(startIndex, startIndex + pageSize);
+  filtered.map(x => x.collection)
   return {
-    data: posts,
-    total: posts.length,
+    data: filtered,
+    total: filtered.length,
     pageCount,
+    categories,
   };
 }
+
+const selectedPosts: string[] = [];
+
+
+
+
+function getRandomPosts(numPosts: number): BlogPost[] {
+  const allPosts = getAllPosts();
+  const numTotalPosts = allPosts.length;
+
+  if (numPosts >= numTotalPosts) {
+    return allPosts;
+  }
+
+  const randomPosts: BlogPost[] = [];
+
+  while (randomPosts.length < numPosts) {
+    const randomIndex = Math.floor(Math.random() * numTotalPosts);
+    const post = allPosts[randomIndex];
+    const postIdentifier = getHash(`${post.slug}${post.date}`);
+
+    if (!selectedPosts.includes(postIdentifier)) {
+      randomPosts.push(post);
+      selectedPosts.push(postIdentifier);
+    }
+  }
+
+  return randomPosts;
+}
+
+export function getSelectedPosts(): {
+  PrimePost: BlogPost;
+  SubPosts: BlogPost[];
+  redactorChoice: BlogPost[];
+} {
+  const allPosts = getAllPosts();
+  const PrimePost = allPosts[0];
+  const SubPosts = getRandomPosts(2);
+  const redactorChoice = getRandomPosts(3);
+
+  return {
+    PrimePost,
+    SubPosts,
+    redactorChoice,
+  };
+}
+
 
 function removeExtensionFromSlug(slug: string, extension = MDX_EXTENSION) {
   return slug.replace(extension, "");
