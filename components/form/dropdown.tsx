@@ -72,7 +72,6 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const toggleDropdown = () => setIsOpen(!isOpen);
  
-  console.log(options)
   function navigateToCategory(category: string | undefined) {
 
     const queryParams = router.query
