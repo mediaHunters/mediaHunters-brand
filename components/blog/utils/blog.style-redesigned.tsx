@@ -306,6 +306,8 @@ export const MainPostContent = styled.div`
   margin: 20px;
   @media screen and (max-width: 1014px) {
     grid-template-columns: 1fr; 
+    margin: 25px 0 0 0;
+
   }
 `;
 
