@@ -316,14 +316,14 @@ export const BlogComponent: React.FCC<{ props: Pagination }> = ({
               })}
           </PostsWrapper>
 
-          <BlogPagination>
+          {/* <BlogPagination>
             {!searchInputValue &&
               Array.from({ length: pageCountValue }, (_, i) => (
                 <BlogPaginationLink key={i} onClick={() => moveToNextPage(i)}>
                   {i + 1}
                 </BlogPaginationLink>
               ))}
-          </BlogPagination>
+          </BlogPagination> */}
         </RightColumn>
       </MainPostContent>
     </BlogContainer>
