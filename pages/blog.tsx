@@ -1,9 +1,9 @@
 import { GetServerSidePropsContext } from "next";
-import { BlogComponent } from "@components/blog/blog.component";
 import FooterComponent from "@components/footer/footer.component";
 import { Navbar } from "@components/header/navbar";
-import { getPostsPaginated, getSelectedPosts } from "@lib/blog/api";
 import styled, { keyframes } from "styled-components";
+
+import { useEffect,useState } from "react";
 
 import { Pagination } from "../interfaces/pagination";
 
@@ -24,26 +24,45 @@ export const PostSkeleton = styled.div`
 `;
 
 const Blog = (props: Pagination) => {
+
+  const [ImportedBlogComponent, setImportedBlogComponent] = useState<any>(null);
+
+  useEffect(() => {
+    const importBlogComponent = async () => {
+      const { BlogComponent } = await import(
+        "@components/blog/blog.component"
+      );
+      setImportedBlogComponent(<BlogComponent props={props} />);
+    };
+    importBlogComponent();
+  }, []);
+
+ 
+
   return (
     <>
-      <Navbar />
-      {props ? (
-        <BlogComponent props={props} />
-      ) : (
-        <Loader>
-          <PostSkeleton />
-          <PostSkeleton />
-          <PostSkeleton />
-        </Loader>
-      )}
-      <FooterComponent />
-    </>
+    <Navbar />
+    {props && ImportedBlogComponent ? (
+  ImportedBlogComponent
+) : (
+  <Loader>
+    <PostSkeleton />
+    <PostSkeleton />
+    <PostSkeleton />
+  </Loader>
+)}
+    <FooterComponent />
+  </>
   );
 };
 
 export default Blog;
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const { getPostsPaginated, getSelectedPosts } = await import(
+    "@lib/blog/api"
+  );
+
   const { data, total, pageCount, categories } = await getPostsPaginated();
   context.res.setHeader(
     "Cache-Control",
