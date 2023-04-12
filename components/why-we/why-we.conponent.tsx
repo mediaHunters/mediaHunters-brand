@@ -61,7 +61,7 @@ const WhyWe = () => {
                   <IoRocketOutline />
                 </AboutCardIcon>
 
-                <AboutCardTitle>Szybka realizację</AboutCardTitle>
+                <AboutCardTitle>Szybka realizacja</AboutCardTitle>
 
                 <AboutCardText>
                   W każdej firmie czas to pieniądz, a my szanujemy czas naszych
